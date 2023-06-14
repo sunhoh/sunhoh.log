@@ -1,14 +1,14 @@
-import Layout from "@/layout/Layout";
-
-import GlobalStyle from "@/styles/GlobalStyle";
-import { ThemeProvider } from "@emotion/react";
-import theme from "@/styles/theme";
-import type { AppProps } from "next/app";
+import 'styles/globals.css';
+import Layout from 'layout/Layout';
+import { ThemeProvider } from '@emotion/react';
+import GlobalStyle from 'styles/GlobalStyle';
+import theme from 'styles/theme';
+import type { AppProps } from 'next/app';
 
 /* components */
-import Helmet from "@/components/html-head/Helmet";
+import Helmet from 'components/html-head/Helmet';
 
-import { RecoilRoot } from "recoil";
+import { RecoilRoot } from 'recoil';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
