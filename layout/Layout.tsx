@@ -1,17 +1,24 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Nav from "./nav/Nav";
-import Footer from "./footer/Footer";
+import React from 'react';
+import Nav from './nav/Nav';
+import Footer from './footer/Footer';
+import styled from '@emotion/styled';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
   return (
-    <main>
+    <MediaComponent>
       <Nav />
-      {children}
+      <main>{children}</main>
       <Footer />
-    </main>
+    </MediaComponent>
   );
 };
 
 export default React.memo(Layout);
+
+const MediaComponent = styled.div`
+  border: 1px solid green;
+  position: relative;
+  height: 100vh;
+  width: 80%;
+  margin: auto;
+`;

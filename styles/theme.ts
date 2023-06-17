@@ -1,45 +1,6 @@
-import { ColorsType, MediaType } from '../types/theme';
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
-const size: { [key: string]: number } = {
-  desktop: 1200,
-  tablet: 810,
-  mobile: 809,
-};
-
-const media: MediaType = Object.keys(size).reduce(
-  (acc: MediaType, label: string) => {
-    switch (label) {
-      case 'desktop':
-        acc.desktop = (...args: string[]) => css`
-          @media screen and (min-width: ${size.desktop}px) {
-            ${args}
-          }
-        `;
-        break;
-      case 'tablet':
-        acc.tablet = (...args: string[]) => css`
-          @media screen and (min-width: ${size.tablet}px) and (max-width: ${size.desktop - 1}px) {
-            ${args}
-          }
-        `;
-        break;
-      case 'mobile':
-        acc.mobile = (...args: string[]) => css`
-          @media screen and (max-width: ${size.mobile}px) {
-            ${args}
-          }
-        `;
-        break;
-      default:
-        break;
-    }
-    return acc;
-  },
-  { desktop: () => undefined, tablet: () => undefined, mobile: () => undefined },
-);
-
-const colors: ColorsType = {
+const colors = {
   primary: '#a772cb',
   secondary: '#ecb0fd',
   tertiary: '#a95ca9',
@@ -49,6 +10,23 @@ const colors: ColorsType = {
   tertiary_rgb: '169, 92, 169',
   quaternary_rgb: '103, 67, 185',
 };
+
+const dimension: { [key: string]: number } = {
+  lg: 2000,
+  md: 1024,
+  sm: 500,
+};
+
+export const media = Object.keys(dimension)
+  .map(key => [key, dimension[key]] as [string, number])
+  .reduce((prev, [key]) => {
+    prev[key] = (...args: string[]) => css`
+      @media only screen and (max-width: ${dimension[key]}px) {
+        ${args}
+      }
+    `;
+    return prev;
+  }, {} as { [index: string]: (...args: string[]) => SerializedStyles });
 
 const theme = {
   colors,

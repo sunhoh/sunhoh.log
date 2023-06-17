@@ -1,14 +1,14 @@
-import 'styles/globals.css';
-import Layout from 'layout/Layout';
 import { ThemeProvider } from '@emotion/react';
 import GlobalStyle from 'styles/GlobalStyle';
 import theme from 'styles/theme';
+import dynamic from 'next/dynamic';
 import type { AppProps } from 'next/app';
+import { RecoilRoot } from 'recoil';
 
 /* components */
 import Helmet from 'components/html-head/Helmet';
 
-import { RecoilRoot } from 'recoil';
+const DynamicLayout = dynamic(() => import('../layout/Layout'), { ssr: false });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -17,9 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <RecoilRoot>
         <ThemeProvider theme={theme}>
           {GlobalStyle}
-          <Layout>
+          <DynamicLayout>
             <Component {...pageProps} />
-          </Layout>
+          </DynamicLayout>
         </ThemeProvider>
       </RecoilRoot>
     </>
