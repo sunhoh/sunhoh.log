@@ -14,7 +14,7 @@ const colors = {
 const dimension: { [key: string]: number } = {
   lg: 2000,
   md: 1024,
-  sm: 500,
+  sm: 550,
 };
 
 export const media = Object.keys(dimension)

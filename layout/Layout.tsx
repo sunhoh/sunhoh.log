@@ -5,20 +5,18 @@ import styled from '@emotion/styled';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <MediaComponent>
-      <Nav />
-      <main>{children}</main>
-      <Footer />
-    </MediaComponent>
+    <>
+      <Container>
+        <Nav />
+        <main>{children}</main>
+        <Footer />
+      </Container>
+    </>
   );
 };
 
 export default React.memo(Layout);
 
-const MediaComponent = styled.div`
-  border: 1px solid green;
-  position: relative;
-  height: 100vh;
-  width: 80%;
-  margin: auto;
+const Container = styled.div`
+  border: 1px solid black;
 `;

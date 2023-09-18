@@ -1,21 +1,24 @@
-import Image from 'next/image';
 import Helmet from 'components/html-head/Helmet';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import { useRouter } from 'next/router';
 
-import fs from 'fs';
-import path from 'path';
+import remarkGfm from 'remark-gfm';
+import ReactMarkdown from 'react-markdown';
+import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
+import { getAllPostPaths, getPostData } from 'utils/post';
+import { PostMeta } from 'types/post';
 
-export default function Post(props: any) {
-  console.log(props);
-  const router = useRouter();
+export default function Post({ postData }: { postData: PostMeta }) {
+  const { contentHtml, date, description, postId, tags, thumbnail, title } = postData;
 
   return (
     <>
       <Helmet title="post" description="post" image="" url="" />
       <div>
-        <Test>{props.id}</Test>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          children={contentHtml}
+          components={syntaxHighlighter as any}
+        />
       </div>
     </>
   );
@@ -27,50 +30,19 @@ const Test = styled.div`
   border: 1px solid red;
 `;
 
-// console.log(`__dirname     ->`, __dirname); // 선택한 폴더 절대 경로까지
-// console.log(`__filename    ->`, __filename); // 선택한 파일 절대 경로까지
-// console.log(`process.cwd() ->`, process.cwd()); // node를 실행 경로
-
-const postRoute = path.join(process.cwd(), 'posts');
-
 export async function getStaticPaths() {
-  const fileNames = fs.readdirSync(postRoute);
-  // >>>fileNames [ 'holle-word.md', 'second-post.md' ]
-
-  const paths = fileNames.map(fileName => {
-    // @@@fileName holle-word.md
-    // @@@fileName second-post.md
-
-    return {
-      params: {
-        id: fileName.replace(/\.md$/, ''),
-      },
-    };
-  });
-  // paths [
-  //   { params: { postId: 'holle-word' } },
-  //   { params: { postId: 'second-post' } }
-  // ]
+  const allPostsList = getAllPostPaths();
 
   return {
-    paths,
+    paths: allPostsList,
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params }: { params: { id: any } }) {
-  console.log('postId', params);
-
-  const fullPath = path.join(postRoute, `${params.id}`);
-  console.log('fullPath', fullPath);
-
-  if (params && typeof params.id === 'undefined') {
-    params.id = null;
-  }
+export async function getStaticProps({ params }: { params: { id: string } }) {
+  const postData = await getPostData(params.id);
 
   return {
-    props: {
-      id: params.id,
-    },
+    props: { postData },
   };
 }
