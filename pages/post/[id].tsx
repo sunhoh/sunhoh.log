@@ -27,7 +27,6 @@ export default function Post({ postData }: { postData: PostMeta }) {
 const Test = styled.div`
   padding: 12px;
   cursor: pointer;
-  border: 1px solid red;
 `;
 
 export async function getStaticPaths() {

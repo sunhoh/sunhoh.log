@@ -9,6 +9,15 @@ const nextConfig = {
     config.resolve.fallback = { fs: false };
     return config;
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/post',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

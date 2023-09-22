@@ -1,8 +1,8 @@
 ---
-title: 'title',
-date: '2023-09-00'
-description: 'description'
-tags: ['프레임워크', 'dadaads']
+title: 'titletitletitletitle 🕵️'
+date: '2023-09-22'
+description: 'descriptiondescriptiondescription'
+tags: ['study', 'js', 'react', 'framework']
 thumbnail: 'thumbnail.png'
 ---
 

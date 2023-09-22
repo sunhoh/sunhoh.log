@@ -1,22 +1,15 @@
 import React from 'react';
 import Nav from './nav/Nav';
 import Footer from './footer/Footer';
-import styled from '@emotion/styled';
+import LayoutFullpage from './LayoutFullpage';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <Container>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
-      </Container>
-    </>
+    <div>
+      <main>{children}</main>
+      <Footer />
+    </div>
   );
 };
 
 export default React.memo(Layout);
-
-const Container = styled.div`
-  border: 1px solid black;
-`;
