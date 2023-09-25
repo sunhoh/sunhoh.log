@@ -1,5 +1,4 @@
 import Helmet from 'components/html-head/Helmet';
-import styled from '@emotion/styled';
 import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
@@ -7,6 +6,7 @@ import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
 import { getAllPostPaths, getPostData } from 'utils/post';
 import { PostMeta } from 'types/post';
 import LayoutFullpage from 'layout/LayoutFullpage';
+import Sidebar from 'components/sidebar/Sidebar';
 
 export default function Post({ data }: { data: PostMeta }) {
   const { contentHtml, date, description, postId, tags, thumbnail, title } = data;
@@ -14,8 +14,8 @@ export default function Post({ data }: { data: PostMeta }) {
   return (
     <>
       <Helmet title="post" description="post" image="" url="" />
-      <article className="lg:p-40 md:px-20 md:py-32 sm:px-8 sm:py-24 transition-all">
-        <h1 className="break-keep pb-5 text-3xl font-semibold sm:text-5xl">{title}</h1>
+      <article className="lg:p-40  md:px-20 md:py-32 sm:px-8 sm:py-24 transition-all max-w-screen-xl m-auto">
+        <h1 className="sm:text-3xl break-keep pb-5 font-semibold text-5xl">{title}</h1>
         <span className="break-keep text-xl text-gray-800">{description}</span>
         <span className="text-md flex items-center gap-2 break-keep pt-5 font-normal text-gray-600 ">
           <p>{date}</p>
@@ -37,7 +37,7 @@ export default function Post({ data }: { data: PostMeta }) {
               components={syntaxHighlighter as any}
             />
           }
-          right={<></>}
+          right={<Sidebar />}
         />
         <div className="py-8" />
       </article>

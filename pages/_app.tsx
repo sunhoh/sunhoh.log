@@ -1,5 +1,6 @@
 import 'styles/globals.css';
 import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 import dynamic from 'next/dynamic';
 import { fontSans, fontMono } from 'lib/font/fonts';
 
@@ -19,11 +20,13 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      <div className="font-sans">
-        <DynamicLayout>
-          <Component {...pageProps} />
-        </DynamicLayout>
-      </div>
+      <ThemeProvider attribute="class">
+        <div className={`font-sans `}>
+          <DynamicLayout>
+            <Component {...pageProps} />
+          </DynamicLayout>
+        </div>
+      </ThemeProvider>
     </>
   );
 }
