@@ -19,9 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
 
-      <DynamicLayout>
-        <Component {...pageProps} />
-      </DynamicLayout>
+      <div className="font-sans">
+        <DynamicLayout>
+          <Component {...pageProps} />
+        </DynamicLayout>
+      </div>
     </>
   );
 }

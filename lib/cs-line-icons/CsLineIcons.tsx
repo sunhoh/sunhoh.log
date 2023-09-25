@@ -48,6 +48,7 @@ const CsLineIcons = ({
         strokeLinecap={strokeLinecap}
         strokeLinejoin={strokeLinejoin}
         className={`cs-icon ${icon} ${className}`}
+        dangerouslySetInnerHTML={{ __html: svgs[icon] }}
       />
     );
   }
