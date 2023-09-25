@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialDark, vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { ReactNode } from 'react';
 
 const syntaxHighlighter = {
   code({ node, inline, className, children, ...props }: any) {
@@ -16,10 +17,25 @@ const syntaxHighlighter = {
       </code>
     );
   },
-  h1: ({ node, className, children, inline, ...props }: any) => <h1>{children}</h1>,
-  h2: ({ children, ...props }: any) => <h2>{children}</h2>,
-  h3: ({ children, ...props }: any) => <h3>{children}</h3>,
-  h4: ({ children, ...props }: any) => <h4>{children}</h4>,
+  h1: ({ node, className, children, inline, ...props }: any) => (
+    <h1 className={`mt-12 mb-6 font-semibold text-3xl sm:text-4xl`} {...props}>
+      {children}
+    </h1>
+  ),
+  h2: ({ children, ...props }: { children: ReactNode }) => (
+    <h2 className="mt-12 mb-6 font-semibold text-2xl sm:text-3xl">{children}</h2>
+  ),
+  h3: ({ children, ...props }: { children: ReactNode }) => (
+    <h3 className="mt-12 mb-6 font-semibold text-xl sm:text-2xl">{children}</h3>
+  ),
+  h4: ({ children, ...props }: { children: ReactNode }) => (
+    <h4 className="mt-12 mb-6 font-semibold text-lg sm:text-xl">{children}</h4>
+  ),
+  strong: ({ children, ...props }: { children: ReactNode }) => (
+    <strong {...props} className="font-medium">
+      {children}
+    </strong>
+  ),
   img: ({ src, alt, ...props }: any) => {
     return (
       <div>
@@ -38,22 +54,42 @@ const syntaxHighlighter = {
   blockquote: ({ children, ...props }: any) => (
     <blockquote
       {...props}
-      style={{
-        background: '#f0f0f0',
-        padding: '15px',
-        borderRadius: '10px',
-      }}
       className="mt-5 mb-8 border-l-2 border-l-zinc-900 py-2 px-6 text-zinc-700 dark:border-l-white dark:text-zinc-300 [&>*:last-child]:mb-0 [&>*:first-child>*]:mt-0"
     >
       {children}
     </blockquote>
   ),
-  a: ({ children, ...props }: any) => <a {...props}>{children}</a>,
-  p: ({ children, ...props }: any) => <div {...props}>{children}</div>,
-  pre: ({ children, ...props }: any) => (
+  a: ({ children, ...props }: any) => (
+    <a {...props} className="text-blue-900 hover:underline dark:text-blue-400">
+      {children}
+    </a>
+  ),
+  p: ({ children, ...props }: any) => (
+    <p {...props} className="text-md mb-8 font-light sm:text-lg">
+      {children}
+    </p>
+  ),
+  pre: ({ children, ...props }: { children: ReactNode }) => (
     <pre {...props} className="mb-6 p-4">
       {children}
     </pre>
+  ),
+  ol: ({ children, depth, ...props }: any) => (
+    <ol {...props} className={`flex flex-col gap-1 mb-6 list-inside list-decimal`}>
+      {children}
+    </ol>
+  ),
+  ul: ({ children, depth, ...props }: any) => {
+    return (
+      <ul {...props} className={`ml-${depth} flex flex-col gap-1 mb-6 list-inside list-disc`}>
+        {children}
+      </ul>
+    );
+  },
+  li: ({ children, ...props }: any) => (
+    <li {...props} className="text-md font-light sm:text-lg [&>ul]:mb-2 [&>ol]:mb-2">
+      {children}
+    </li>
   ),
 };
 

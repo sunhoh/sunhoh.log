@@ -2,7 +2,6 @@ import React from 'react';
 import { css } from '@emotion/react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
-import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { DEFAULT_PATHS } from 'lib/config';
 
 const Nav = () => {

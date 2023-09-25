@@ -2,14 +2,14 @@ import React from 'react';
 
 interface IProps {
   left: React.ReactNode;
-  right: React.ReactNode;
+  right?: React.ReactNode;
 }
 const LayoutFullpage = ({ left, right }: IProps) => {
   return (
-    <section className="">
-      <div className="">
-        <div className="">{left}</div>
-        <div className="">{right}</div>
+    <section>
+      <div className="flex border border-solid">
+        <div className="w-full  border border-solid">{left}</div>
+        <div className="md:hidden w-1/4 border border-solid ">{right}</div>
       </div>
     </section>
   );

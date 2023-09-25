@@ -1,6 +1,20 @@
-/* eslint-disable react/no-danger */
 import React from 'react';
 import svgs from './svgs';
+
+interface ICsLineIcons {
+  icon: string;
+  className?: string;
+  size?: number | null;
+  width?: number;
+  height?: number;
+  fill?: string;
+  stroke?: string;
+  strokeWidth?: number;
+  strokeLinecap?: 'round' | 'butt' | 'square' | 'inherit' | undefined;
+  strokeLinejoin?: 'round' | 'inherit' | 'miter' | 'bevel' | undefined;
+  viewBox?: any;
+  xmlns?: string;
+}
 
 const CsLineIcons = ({
   icon = '',
@@ -15,7 +29,7 @@ const CsLineIcons = ({
   strokeLinejoin = 'round',
   viewBox = '0 0 24 24',
   xmlns = 'http://www.w3.org/2000/svg',
-}) => {
+}: ICsLineIcons) => {
   if (svgs[icon]) {
     if (size) {
       width = size;
@@ -34,11 +48,9 @@ const CsLineIcons = ({
         strokeLinecap={strokeLinecap}
         strokeLinejoin={strokeLinejoin}
         className={`cs-icon ${icon} ${className}`}
-        dangerouslySetInnerHTML={{ __html: svgs[icon] }}
       />
     );
   }
-  console.log(`CsLineIcons -> [${icon}] icon is not defined.`);
   return <></>;
 };
 

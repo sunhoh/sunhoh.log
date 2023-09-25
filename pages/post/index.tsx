@@ -6,11 +6,12 @@ import { Post } from 'types/post';
 
 const Posts = ({ posts }: { posts: Post[] }) => {
   return (
-    <section className="lg:p-52 md:px-20 md:py-32 sm:px-8 sm:py-24 transition-all">
+    <section className="lg:p-40 md:px-20 md:py-32 sm:px-8 sm:py-24 transition-all">
       <div className="flex justify-between">
-        <h2 className="flex items-center text-3xl font-bold">Posts</h2>
-        <div className="flex">
-          {/* {['보도자료', '공지사항'].map(sub => {
+        <h2 className="flex items-center text-3xl font-sans font-bold">Posts</h2>
+
+        {/* <div className="flex">
+          {['tags', 'about', 'd'].map(sub => {
             return (
               <ul key={sub} onClick={({ target: { innerHTML } }: any) => {}}>
                 <li className="text-lg ml-2 py-3 px-6 rounded-full transition ease-in-out delay-250 cursor-pointer bg-gray-100 hover:bg-gray-400">
@@ -18,18 +19,19 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 </li>
               </ul>
             );
-          })} */}
-        </div>
+          })}
+        </div> */}
       </div>
       {/*  */}
       {posts.map((item: any, idx: number) => {
-        const { id, title, date, description, tags, thumbnail } = item;
+        const { id, title, date, category, description, tags, thumbnail } = item;
+
         return (
           <Link key={idx} href={`/post/${id}`}>
             <div className="group px-0 py-10  flex flex-col gap-2.5 border-solid border-b border-slate-200 cursor-pointer">
-              <div className="flex gap-2.5">
-                <div className="text-xs font-bold text-quaternary">{id}</div>
-                <div className="font-serif text-xs font-normal text-gray-400">{date}</div>
+              <div className="flex gap-2.5 ">
+                <div className="text-xs font-mono font-bold text-quaternary">{category}</div>
+                <strong className="font-serif text-xs font-normal text-gray-400">{date}</strong>
               </div>
 
               <div className="flex items-center justify-between">
@@ -38,8 +40,6 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 </span>
                 <CsLineIcons
                   icon="github"
-                  fill="#6b7480"
-                  stroke="0"
                   className="transition-all opacity-0 group-hover:opacity-100"
                 />
               </div>

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -18,6 +19,15 @@ module.exports = {
         sm: { min: '390px', max: '819px' },
         md: { min: '810px', max: '1200px' },
         lg: { min: '1201px' },
+      },
+
+      boxShadow: {
+        '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
+        // spoqa: ['var(--font-spoqa)', ...fontFamily.sans],
       },
     },
   },

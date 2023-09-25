@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 type HelmetProps = {
   title?: string | undefined;
@@ -10,11 +10,11 @@ type HelmetProps = {
 
 const Helmet = ({ title, description, image, keywords, url }: HelmetProps) => {
   const basicConfig = {
-    title: "달달",
-    siteTitle: ">daldal",
-    description: "달달하게 정보 공유 하자!",
-    url: "",
-    image: "",
+    title: '달달',
+    siteTitle: '>daldal',
+    description: '쿠키 굽',
+    url: '',
+    image: '',
     keywords: `개발자, 기술블로그`,
   };
 
@@ -24,10 +24,7 @@ const Helmet = ({ title, description, image, keywords, url }: HelmetProps) => {
       <link rel="icon" href="/favicon.png" />
       <meta charSet="utf-8" />
       <meta name="description" content={basicConfig.description} />
-      <meta
-        name="keywords"
-        content={`${basicConfig.keywords}, ${keywords ? keywords : ""}`}
-      />
+      <meta name="keywords" content={`${basicConfig.keywords}, ${keywords ? keywords : ''}`} />
 
       {/* open graph */}
       <meta property="og:type" content="website" />
@@ -37,10 +34,7 @@ const Helmet = ({ title, description, image, keywords, url }: HelmetProps) => {
       />
       <meta property="og:description" content={basicConfig.description} />
       <meta property="og:site_name" content={basicConfig.siteTitle} />
-      <meta
-        property="og:url"
-        content={url ? `${basicConfig.url}${url}` : basicConfig.url}
-      />
+      <meta property="og:url" content={url ? `${basicConfig.url}${url}` : basicConfig.url} />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:image" content={image ?? basicConfig.image} />
     </Head>

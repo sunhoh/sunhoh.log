@@ -1,14 +1,17 @@
 import React from 'react';
+import Link from 'next/link';
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 
 const Footer = () => {
   return (
-    <footer className="mt-10 w-full ">
-      <div className="flex flex-col items-end  border border-solid p-5">
-        <a href="https://github.com/sunhoh">
-          <CsLineIcons icon="github" fill="#6b7480" stroke="0" />
-        </a>
-        <span>© 2023 sunhoh blog Powered by Next.js, Github Pages</span>
+    <footer className="mt-10 w-full m-auto lg:px-40 md:px-20 sm:px-8 transition-all">
+      <div className="flex flex-col items-end p-5 ">
+        <Link href="https://github.com/sunhoh">
+          <CsLineIcons icon="github" fill="#6b7480" />
+        </Link>
+        <span className="mt-3 font-serif font-normal text-sm">
+          © 2023 sunhoh blog Powered by Next.js, vercel
+        </span>
       </div>
     </footer>
   );

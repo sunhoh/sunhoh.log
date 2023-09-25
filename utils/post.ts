@@ -17,8 +17,6 @@ export const getAllPosts = () => {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
-    console.log('matterResult>?>???????', matterResult);
-
     return {
       id,
       ...matterResult.data,
@@ -28,8 +26,6 @@ export const getAllPosts = () => {
   const sortedPostList = allPostsData.sort((a: any, b: any) =>
     differenceInDays(new Date(b.date), new Date(a.date)),
   );
-
-  // console.log('sortedPostList >>>> ', sortedPostList);
 
   return sortedPostList;
 };
