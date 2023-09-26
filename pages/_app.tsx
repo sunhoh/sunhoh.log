@@ -21,11 +21,9 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
 
       <ThemeProvider attribute="class">
-        <div className={`font-sans `}>
-          <DynamicLayout>
-            <Component {...pageProps} />
-          </DynamicLayout>
-        </div>
+        <DynamicLayout>
+          <Component {...pageProps} />
+        </DynamicLayout>
       </ThemeProvider>
     </>
   );

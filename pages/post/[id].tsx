@@ -3,30 +3,39 @@ import Image from 'next/image';
 import remarkGfm from 'remark-gfm';
 import ReactMarkdown from 'react-markdown';
 import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
-import { getAllPostPaths, getPostData } from 'utils/post';
+import { getAllPostPaths, getPostData, getKoreanDate } from 'utils/post';
 import { PostMeta } from 'types/post';
 import LayoutFullpage from 'layout/LayoutFullpage';
 import Sidebar from 'components/sidebar/Sidebar';
+import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 
 export default function Post({ data }: { data: PostMeta }) {
-  const { contentHtml, date, description, postId, tags, thumbnail, title } = data;
+  const { contentHtml, date, description, postId, thumbnail, title } = data;
 
   return (
     <>
       <Helmet title="post" description="post" image="" url="" />
-      <article className="lg:p-40  md:px-20 md:py-32 sm:px-8 sm:py-24 transition-all max-w-screen-xl m-auto">
-        <h1 className="sm:text-3xl break-keep pb-5 font-semibold text-5xl">{title}</h1>
-        <span className="break-keep text-xl text-gray-800">{description}</span>
-        <span className="text-md flex items-center gap-2 break-keep pt-5 font-normal text-gray-600 ">
-          <p>{date}</p>
-        </span>
-        <div className="flex justify-center py-10">
+      <article>
+        <div className="flex flex-col items-center">
+          <h1 className="pt-[5%] pb-8 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+            {title}
+          </h1>
+          <span className="pb-1 text-lg">{description}</span>
+          <div className="flex items-center">
+            <CsLineIcons icon="calendar" fill="#000" stroke="0" className="h-5" />
+            <span className="text-sm leading-6 text-gray-500 dark:text-gray-400 ml-1">
+              {getKoreanDate(new Date(date))}
+            </span>
+          </div>
+        </div>
+        <div className="flex justify-center py-10 ">
           <Image
-            className="max-h-[400px] object-cover"
-            src={`/images/${postId}/${thumbnail}`}
-            alt={thumbnail}
             width={992}
             height={992}
+            alt={thumbnail}
+            src={`/images/${postId}/${thumbnail}`}
+            className="max-h-[400px] object-cover"
+            priority
           />
         </div>
         <LayoutFullpage

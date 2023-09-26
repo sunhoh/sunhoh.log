@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark, vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { Prism as ReactSyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { ReactNode } from 'react';
 
 const syntaxHighlighter = {
   code({ node, inline, className, children, ...props }: any) {
     const match = /language-(\w+)/.exec(className || '');
     return !inline && match ? (
-      <SyntaxHighlighter language={match[1]} PreTag="pre" style={materialDark} {...props}>
+      <ReactSyntaxHighlighter language={match[1]} PreTag="pre" style={materialDark} {...props}>
         {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
+      </ReactSyntaxHighlighter>
     ) : (
       <code className={className} {...props}>
         {children}
@@ -74,20 +74,22 @@ const syntaxHighlighter = {
       {children}
     </pre>
   ),
-  ol: ({ children, depth, ...props }: any) => (
-    <ol {...props} className={`flex flex-col gap-1 mb-6 list-inside list-decimal`}>
+  ol: ({ children, ...props }: any) => (
+    <ol {...props} className="flex flex-col gap-1 mb-6 list-inside list-decimal" ordered="true">
       {children}
     </ol>
   ),
-  ul: ({ children, depth, ...props }: any) => {
-    return (
-      <ul {...props} className={`ml-${depth} flex flex-col gap-1 mb-6 list-inside list-disc`}>
-        {children}
-      </ul>
-    );
-  },
+  ul: ({ children, depth, ...props }: any) => (
+    <ul
+      {...props}
+      className={`ml-${depth} flex flex-col gap-1 mb-6 list-inside list-disc`}
+      ordered="true"
+    >
+      {children}
+    </ul>
+  ),
   li: ({ children, ...props }: any) => (
-    <li {...props} className="text-md font-light sm:text-lg [&>ul]:mb-2 [&>ol]:mb-2">
+    <li {...props} className="text-md font-light sm:text-lg [&>ul]:mb-2 [&>ol]:mb-2" ordered="true">
       {children}
     </li>
   ),

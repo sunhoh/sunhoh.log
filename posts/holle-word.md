@@ -1,7 +1,7 @@
 ---
 title: ' 로드맵 정리'
 date: '2023-03-05'
-category: website
+category: webdocument
 description: 프론트엔드 로드맵
 tags: ['study', '개발']
 thumbnail: 'thumbnail.jpg'
@@ -10,15 +10,6 @@ thumbnail: 'thumbnail.jpg'
 # 로드맵 정리겸 현재 내 상황 파악하기
 
 ---
-
-> 1. 아직 js전반적인거는 공부했지만 더 자세히 공부하기
-> 2. 타입스크립트 공부하기 전반적인 OOP느낌 알아보기
-
-> 1. 현재 SPA기반의 프레임 워크는 React사용중
-> 2. 전역 상태 관리 Redux공부중
-
-> 1. VCS는 Git/GitHub 사용중
-> 2. 모듈번들러는 보통 CRA로 작업했어서 자세히는 몰랐는데 웹팩에 대해서 공부하기
 
 > Testing은 Jest 사용해보기
 

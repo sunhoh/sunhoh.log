@@ -4,7 +4,7 @@ import Footer from './footer/Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <div className="mx-auto max-w-2xl px-6 lg:max-w-4xl transition-all lg:px-8">
       <Nav />
       <main>{children}</main>
       <Footer />
