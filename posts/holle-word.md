@@ -4,10 +4,10 @@ date: '2023-03-05'
 category: webdocument
 description: 프론트엔드 로드맵
 tags: ['study', '개발']
-thumbnail: 'thumbnail.jpg'
+thumbnail: 'thumbnail.png'
 ---
 
-# 로드맵 정리겸 현재 내 상황 파악하기
+## 로드맵 정리겸 현재 내 상황 파악하기
 
 ---
 
@@ -15,7 +15,17 @@ thumbnail: 'thumbnail.jpg'
 
 출처 - [드림코딩](https://www.youtube.com/watch?v=TTLHd3IyErM)
 
-### 개발스텍 기본 이해
+# 1개짜리 개발스텍 기본 이해
+
+## 2개짜리 개발스텍 기본 이해
+
+### 3개짜리 개발스텍 기본 이해
+
+### 3개짜리 개발스텍 기본 이해
+
+### 3개짜리 개발스텍 기본 이해
+
+## 2개짜리 개발스텍 기본 이해
 
 Understanding For Programe Development (개발이해 기본)
 

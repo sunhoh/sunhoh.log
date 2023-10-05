@@ -3,10 +3,9 @@ import { Post } from 'types/post';
 import { getAllPosts } from 'utils/post';
 import PostItem from 'container/post/PostItem';
 import { useTheme } from 'next-themes';
+import { parseToc } from 'utils/post';
 
 const Posts = ({ posts }: { posts: Post[] }) => {
-  const { theme, setTheme } = useTheme();
-
   return (
     <section className="mt-10">
       <div className="flex justify-between">
