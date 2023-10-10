@@ -9,14 +9,16 @@ const Nav = () => {
 
   return (
     <nav className="flex w-full select-none items-end pt-8 pb-12">
-      <div className="hidden c sm:flex">
+      {/* home logo hidden sm:flex */}
+      <div className="">
         <Link href={DEFAULT_PATHS.HOME}>
           <h1 className="text-3xl font-bold cursor-pointer">Blog</h1>
         </Link>
       </div>
-      <div className="p-1 flex items-center cursor-pointer sm:hidden ">
+      {/* sm bar */}
+      {/* <div className="p-1 flex items-center cursor-pointer sm:hidden ">
         <CsLineIcons icon="bar" />
-      </div>
+      </div> */}
       <div
         className="ml-2 p-1 rounded-lg hover:bg-neutral-100 dark:bg-neutral-800 cursor-pointer "
         onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}

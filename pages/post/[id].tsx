@@ -12,23 +12,24 @@ import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 export default function Post({ data }: { data: PostMeta }) {
   const { contentHtml, date, description, postId, thumbnail, title, tableOfContents } = data;
 
+  console.log('tableOfContents',tableOfContents)
+
   return (
     <>
       <Helmet title="post" description="post" image="" url="" />
       <article>
-        <div className="flex flex-col items-center">
-          <h1 className="pt-[5%] pb-8 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+        {/* <div className="flex flex-col  border border-solid">
+          <h1 className="pt-[5%] pb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
             {title}
           </h1>
-          {/* <span className="pb-1 text-lg">{description}</span> */}
-          <div className="flex items-center">
+          <div className="flex ">
             <CsLineIcons icon="calendar" fill="#000" stroke="0" className="h-5" />
             <span className="text-sm leading-6 text-gray-500 dark:text-gray-400 ml-1">
               {getEnUsDate(new Date(date))}
             </span>
           </div>
-        </div>
-        <div className="flex justify-center py-10 ">
+        </div> */}
+        {/* <div className="flex justify-center py-10 ">
           <Image
             width={992}
             height={992}
@@ -37,7 +38,7 @@ export default function Post({ data }: { data: PostMeta }) {
             className="max-h-[400px] object-cover"
             priority
           />
-        </div>
+        </div> */}
         <LayoutFullpage
           left={
             <ReactMarkdown
@@ -46,7 +47,7 @@ export default function Post({ data }: { data: PostMeta }) {
               components={syntaxHighlighter as any}
             />
           }
-          right={<Sidebar />}
+          right={<Sidebar toc={tableOfContents} />}
         />
         <div className="py-8" />
       </article>

@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import * as remarkHtml from 'remark-html';
 import { differenceInDays } from 'date-fns';
-import { TableOfContents } from 'types/post';
+import { Post,TableOfContents } from 'types/post';
 
 const postRoute = path.join(process.cwd(), 'posts');
 
@@ -12,19 +12,19 @@ export const getAllPosts = () => {
   const fileNames = fs.readdirSync(postRoute);
 
   const allPostsData = fileNames.map(fileName => {
-    const id = fileName.replace(/\.md$/, '');
+    const postId = fileName.replace(/\.md$/, '');
 
     const fullPath = path.join(postRoute, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
     return {
-      id,
+      postId,
       ...matterResult.data,
     };
   });
 
-  const sortedPostList = allPostsData.sort((a: any, b: any) =>
+  const sortedPostList = allPostsData.sort((a:any, b:any) => 
     differenceInDays(new Date(b.date), new Date(a.date)),
   );
 

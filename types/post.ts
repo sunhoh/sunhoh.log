@@ -15,7 +15,7 @@ export type TableOfContents = Section[];
  * post 타입
  */
 export interface Post {
-  id: string;
+  postId: string;
   title: string;
   category: string;
   description: string;
@@ -25,7 +25,6 @@ export interface Post {
 }
 
 export interface PostMeta extends Post {
-  postId: string;
   contentHtml: string;
   tocHtml: string;
   tableOfContents: TableOfContents;
