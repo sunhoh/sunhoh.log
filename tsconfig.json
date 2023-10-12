@@ -15,8 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "jsxImportSource": "@emotion/react",
-    "types": ["@emotion/react/types/css-prop"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/cs-line-icons/CsLineIcons.tsx"],
   "exclude": ["node_modules"]

@@ -14,24 +14,24 @@ export default function Post({ data }: { data: PostMeta }) {
 
   return (
     <>
-      <Helmet title="post" description="post" image="" url="" />        
-      
-      <div className='border border-solid gap-8 lg:flex'>
-        <div className='border border-solid'>
-          <Sidebar toc={tableOfContents} />
-        </div>
-
-        <div className='border border-solid '>
-          <article className='w-full'>
-            <div className="bg-gray-100">
-            <h1 className="pb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              {title}
-            </h1>
-            <div className="flex ">
-              <CsLineIcons icon="calendar" fill="#000" stroke="0" className="h-5" />
-              <span className="text-sm leading-6 text-gray-500 dark:text-gray-400 ml-1">
-                {getEnUsDate(new Date(date))}
-              </span>
+      <Helmet title="post" description="post" image="" url="" />
+      {/* opacity: 1; will-change: opacity; */}
+        <div className='relative gap-8 lg:flex'>
+          {/*  20 */}
+          <div className='ml-auto w-1/5'>
+            <Sidebar toc={tableOfContents} />
+          </div>
+          {/*  80 */}
+          <article className='w-full lg:w-4/5'>
+            <div className=" bg-gray-100">
+              <h1 className="pb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                {title}
+              </h1>
+              <div className="flex ">
+                <CsLineIcons icon="calendar" fill="#000" stroke="0" className="h-5" />
+                <span className="text-sm leading-6 text-gray-500 dark:text-gray-400 ml-1">
+                  {getEnUsDate(new Date(date))}
+                </span>
               </div>
             </div>
             <LayoutFullpage
@@ -42,16 +42,9 @@ export default function Post({ data }: { data: PostMeta }) {
                   components={syntaxHighlighter as any}
                 />}
             />
+            <div className="py-8" />
           </article>
         </div>
-        <div className='py-10'></div>
-        <div className='py-10'></div>
-        <div className='py-10'></div>
-
-        <div className='py-10'></div>
-
-        <div className='py-10'></div>
-      </div>
     </>
   );
 }

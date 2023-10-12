@@ -8,9 +8,8 @@ interface IProps {
 const LayoutFullpage = ({ left, right }: IProps) => {
   return (
     <section>
-      <div className="gap-8 lg:flex ">
-        <div className="w-full border border-soild">{left}</div>
-        <div className="border border-solid">{right}</div>
+      <div>
+        <div className="w-full">{left}</div>
       </div>
     </section>
   );

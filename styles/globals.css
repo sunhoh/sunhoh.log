@@ -3,18 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 컴포넌트안의 button 클레스들 통합 스타일 */
-/* @layer components {
-  .button {
-    @apply px-3;
-  }
-  @screen xl{
-    .button { 
-      @apply px-5
-    }
-  }
-} */
-
 html,
 body {
   padding: 0;

@@ -1,17 +1,4 @@
 /**
- * 목차 타입
- */
-export type SubSection = {
-  slug: string;
-};
-
-export type Section = SubSection & {
-  subs: SubSection[];
-};
-
-export type TableOfContents = Section[];
-
-/**
  * post 타입
  */
 export interface Post {
@@ -29,3 +16,18 @@ export interface PostMeta extends Post {
   tocHtml: string;
   tableOfContents: TableOfContents;
 }
+
+/**
+ * 목차 타입
+ */
+export type SubSection = {
+  slug: string;
+  text: string;
+};
+
+export type Section = SubSection & {
+  subs: SubSection[];
+  
+};
+
+export type TableOfContents = Section[];

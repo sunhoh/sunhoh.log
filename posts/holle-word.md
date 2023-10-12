@@ -1,50 +1,32 @@
 ---
-title: ' 로드맵 정리'
-date: '2023-03-05'
-category: webdocument
-description: 프론트엔드 로드맵
-tags: ['study', '개발']
-thumbnail: 'thumbnail.png'
+title: 라이트하우스를 통한 웹 페이지 품질 개선
+date: '2022-09-25'
+description: 개발자 도구로 간편하게 성능을 측정하고 개선하는 방법
+tags: ['라이트하우스', '크롬', '성능 개선', '웹']
+thumbnail: 'thumbnail.jpg'
 ---
 
-## 로드맵 정리겸 현재 내 상황 파악하기
+# 라이트하우스란
 
 ---
 
-> Testing은 Jest 사용해보기
+[**라이트하우스**](https://en.wikipedia.org/wiki/Google_Lighthouse)는 **구글**에서 제공하는 **웹 사이트 성능 검사 서비스**로서 개발자가 사이트의 사용자 경험을 개선할 수 있는 기회와 진단을 제공합니다. 라이트하우스는 다양한 방법(크롬 개발자 도구, `npm` 또는 [브라우저 확장 프로그램](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk))을 통해 활용할 수 있는데 저는 **개발자 도구**를 통해 이를 활용했습니다. 참고로 `npm` 방식은 다음 명령어를 통해 활용할 수 있습니다.
 
-출처 - [드림코딩](https://www.youtube.com/watch?v=TTLHd3IyErM)
+```sh
+npm install -g lighthouse
+lighthouse https://www.example.com --viewnpm install -g lighthouse
+lighthouse https://www.example.com --viewnpm install -g lighthouse
+lighthouse https://www.example.com --viewnpm install -g lighthouse
+lighthouse https://www.example.com --viewnpm install -g lighthouse
+lighthouse https://www.example.com --viewnpm install -g
 
-# 1개짜리 개발스텍 기본 이해
+```
 
-## 2개짜리 개발스텍 기본 이해
+```js
+dajkfdkdfnjndfkjnkn
+```
 
-### 3개짜리 개발스텍 기본 이해
 
-### 3개짜리 개발스텍 기본 이해
 
-### 3개짜리 개발스텍 기본 이해
 
-## 2개짜리 개발스텍 기본 이해
-
-Understanding For Programe Development (개발이해 기본)
-
-1. StackPython = Django (Nginx, Postgresql, Gunicorn, Python, Python-pip)
-
-- Ruby = Gem+RVM (Rvm, Docker, Ruby Navtive code)
-- C = Java , Dotnet Framework (Visutal Studio , Embeede Programe)
-- PHP = Lalavel Framework (Php, Composer-artisan, Nginx or Apached2 , Mysql Or Postgresql)
-- NodeJS = Noejs Stack (Java, Npm, MongoDB, React, NestJS^, Depencencise Install List, Yarn)
-
-2. Development stopDesign -> Publishing -> Frontend -> Backend
-
-Design = Figma , Sketch , AdobeXD ,
-
-ZeplinePublishing = html, phpFrontend = React,JavaScript Vue.js
-
-Backend= Python,Ruby,C,Java
-
-1. AppNative = Android Studio (Kotlin), Xcode(IOS swift)Hybrid = ReactNative, Flutter (Google Native Engine Use), Ionic=WebView = Use Django OR Lalavel
-2. ToolsVscode, Terminus, Postman, Github ETC
-
-TODOFind your fit position of the ListExample)Frontend Skill and Stack = Use React + anigma Tools + Vscode + Node.js (Frontend) + Java
+- [구글 라이트하우스](https://web.dev/lighthouse-performance/)

@@ -2,7 +2,6 @@ import React from 'react';
 import { Post } from 'types/post';
 import { getAllPosts } from 'utils/post';
 import PostItem from 'container/post/PostItem';
-import { parseToc } from 'utils/post';
 
 const Posts = ({ posts }: { posts: Post[] }) => {
   

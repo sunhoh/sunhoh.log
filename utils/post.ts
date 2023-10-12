@@ -69,13 +69,22 @@ export const getPostData = async (postId: string) => {
 
 export const parseToc = (data: string[]) => {
   return data.reduce<TableOfContents>((acc, item) => {
-    const slug = item.replace(/^##*\s/, '');
+    const rawText = item.replace(/^##*\s/, '');
     const isSubTitle = item.split('#').length - 1 === 3;
 
+    
+    const section = {
+      slug: rawText
+        .trim()
+        .toLowerCase()
+        .replace(/\s/g, '-'),
+      text: rawText,
+    };
+
     if (!isSubTitle) {
-      acc.push({ slug, subs: [] });
+      acc.push({ ...section, subs: [] });
     } else if (acc.length > 0) {
-      acc[acc.length - 1].subs.push({ slug });
+      acc[acc.length - 1].subs.push({ ...section });
     }
 
     return acc;
