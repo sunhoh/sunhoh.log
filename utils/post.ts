@@ -57,7 +57,7 @@ export const getPostData = async (postId: string) => {
 
   const contentHtml = processedContent.toString();
   const source: string[] = contentHtml.split('\n').filter(line => line.match(/^(#{1,3})\s/));
-  const tableOfContents = parseToc(source);
+  const tableOfContents = parseToc(source);  
 
   return {
     postId,
@@ -72,7 +72,6 @@ export const parseToc = (data: string[]) => {
     const rawText = item.replace(/^##*\s/, '');
     const isSubTitle = item.split('#').length - 1 === 3;
 
-    
     const section = {
       slug: rawText
         .trim()

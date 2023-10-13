@@ -12,10 +12,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1b98d0',
-        secondary: '#61c6d8',
-        tertiary: '#54cdb4',
-        quaternary: '#7a43d3',
+        primary: '',
+        secondary: '',
+        tertiary: '',
+        quaternary: '',
       },
 
       boxShadow: {},

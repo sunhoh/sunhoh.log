@@ -4,8 +4,6 @@ import { getAllPosts } from 'utils/post';
 import PostItem from 'container/post/PostItem';
 
 const Posts = ({ posts }: { posts: Post[] }) => {
-  
-
   return (
     <section className="mt-10">
       <div className="flex justify-between">
