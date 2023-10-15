@@ -13,11 +13,11 @@ const PostNavigation = ({ prevPost, nextPost }:PostNavigationProps) => {
             </Link>
           ): <div />}
           {nextPost ? (
-            <Link href={`/post/${nextPost.postId}`} className='ml-auto flex flex-col text-right tracking-tight hover:brightness-125'>
+            <Link href={`/post/${nextPost.postId}`} className='ml-auto flex flex-col text-right tracking-tight hover:brightness-1ㅌR25'>
                 <div className='mb-2 text-gray-400 font-light'>Next</div> 
                 <span>{nextPost.title}</span>
             </Link>
-          ):<div className='border border-solid' />}
+          ):<div />}
         </div>
     )
 }

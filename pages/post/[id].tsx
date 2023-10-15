@@ -19,10 +19,9 @@ export default function Post({ data }: { data: PostMeta }) {
       <Helmet title={title} description={description} image={thumbnail} url="" /> 
       <div className='mt-10 gap-8 lg:flex'>
         <Sidebar toc={tableOfContents} />
-        <div>
-          <article className='w-full'>
+        <div className='w-full'>
+          <article>
             <div>
-            
               <h1 className="pb-2 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 text-4xl sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-14">
                 {title}
               </h1>
@@ -34,7 +33,7 @@ export default function Post({ data }: { data: PostMeta }) {
               </div>
             </div>
             <LayoutFullpage
-              left={
+              constents={
                 <ReactMarkdown
                   remarkPlugins={[remarkGfm]}
                   children={contentHtml}

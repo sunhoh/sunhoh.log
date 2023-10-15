@@ -1,15 +1,14 @@
 import React from 'react';
 
 interface IProps {
-  left: React.ReactNode;
-  right?: React.ReactNode;
+  constents: React.ReactNode;
 }
 
-const LayoutFullpage = ({ left, right }: IProps) => {
+const LayoutFullpage = ({ constents }: IProps) => {
   return (
     <section>
       <div>
-        <div className="w-full">{left}</div>
+        <div className="w-full">{constents}</div>
       </div>
     </section>
   );
