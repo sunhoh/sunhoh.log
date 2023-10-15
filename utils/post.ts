@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import * as remarkHtml from 'remark-html';
 import { differenceInDays } from 'date-fns';
-import { Post,TableOfContents } from 'types/post';
+import { TableOfContents } from 'types/post';
 
 const postRoute = path.join(process.cwd(), 'posts');
 
@@ -17,6 +17,8 @@ export const getAllPosts = () => {
     const fullPath = path.join(postRoute, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
+
+
 
     return {
       postId,
@@ -33,17 +35,10 @@ export const getAllPosts = () => {
 
 export const getAllPostPaths = () => {
   const fileNames = fs.readdirSync(postRoute);
+
   return fileNames.map(post => {
     return { params: { id: post.replace(/\.md$/, '') } };
   });
-};
-
-export const getEnUsDate = (date: Date) => {
-  const year = date.getFullYear();
-  const month = date.toLocaleString('en-US', { month: 'long' });
-  const day = date.getDate();
-
-  return `${month} ${day}. ${year}`;
 };
 
 export const getPostData = async (postId: string) => {
@@ -59,10 +54,17 @@ export const getPostData = async (postId: string) => {
   const source: string[] = contentHtml.split('\n').filter(line => line.match(/^(#{1,3})\s/));
   const tableOfContents = parseToc(source);  
 
+  const postIndex = getAllPosts().findIndex(v => v.postId === postId)
+  const postNavigationProps =  {
+    prevPost: getAllPosts()[postIndex + 1] ?? null,
+    nextPost: getAllPosts()[postIndex - 1] ?? null
+  }
+
   return {
     postId,
     contentHtml,
     tableOfContents,
+    postNavigationProps,
     ...result.data,
   };
 };
@@ -88,4 +90,13 @@ export const parseToc = (data: string[]) => {
 
     return acc;
   }, []);
+};
+
+
+export const getEnUsDate = (date: Date) => {
+  const year = date.getFullYear();
+  const month = date.toLocaleString('en-US', { month: 'long' });
+  const day = date.getDate();
+
+  return `${month} ${day}. ${year}`;
 };

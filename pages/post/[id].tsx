@@ -8,9 +8,10 @@ import LayoutFullpage from 'layout/LayoutFullpage';
 import Sidebar from 'components/sidebar/Sidebar';
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { useTheme  } from 'next-themes';
+import PostNavigation from 'components/post-navigation/PostNavigation'
 
 export default function Post({ data }: { data: PostMeta }) {
-  const { contentHtml, date, title, description, thumbnail, tableOfContents } = data;
+  const { contentHtml, date, title, description, thumbnail, tableOfContents, postNavigationProps } = data;
   const { theme } = useTheme()
 
   return (
@@ -42,6 +43,9 @@ export default function Post({ data }: { data: PostMeta }) {
             />
           </article>
           <hr className='mb-10 mt-20 h-[1px] w-full border-gray-300'/>  
+
+        {/*  post navigation  */}
+          <PostNavigation {...postNavigationProps}/>
         </div>
       </div>
       

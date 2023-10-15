@@ -19,7 +19,7 @@ const Sidebar = ({toc}:{toc:TableOfContents}) => {
                   <a href={`#${section.slug}`}>{section.text}</a>
                 </li>
                 {section.subs.map((subSection) =>(
-                  <li key={subSection.slug} className="ml-4 text-sm font-normal hover:font-bold'">
+                  <li key={subSection.slug} className="ml-4 text-sm font-normal hover:font-bold">
                     <a href={`#${subSection.slug}`}>{subSection.text}</a>
                   </li>
                   ))}

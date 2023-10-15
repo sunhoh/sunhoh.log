@@ -15,6 +15,16 @@ export interface PostMeta extends Post {
   contentHtml: string;
   tocHtml: string;
   tableOfContents: TableOfContents;
+  postNavigationProps: PostNavigationProps;
+  
+}
+
+/**
+ * post 네비
+ */
+export type PostNavigationProps = {
+  prevPost: Pick<Post, 'title' | 'postId'> | null;
+  nextPost: Pick<Post, 'title' | 'postId'> | null;
 }
 
 /**
