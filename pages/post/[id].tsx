@@ -17,17 +17,17 @@ export default function Post({ data }: { data: PostMeta }) {
   return (
     <>
       <Helmet title={title} description={description} image={thumbnail} url="" /> 
-      <div className='mt-10 gap-8 lg:flex'>
+      <div className='flex gap-6'>
         <Sidebar toc={tableOfContents} />
-        <div className='w-full'>
-          <article>
+        <div >
+          <article className='w-full'>
             <div>
-              <h1 className="pb-2 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 text-4xl sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-14">
+              <h1 className="pb-2 text-2xl font-extrabold leading-10 tracking-tight text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-8 lg:leading-14">
                 {title}
               </h1>
               <div className="flex">
                 <CsLineIcons icon="calendar" fill={theme==='dark' ? "#e5e7eb" : "#000"} stroke="0" className="h-5" />
-                <span className="text-sm leading-6 text-gray-500 dark:text-gray-400 ml-1">
+                <span className="ml-1 text-sm leading-6 text-gray-500 dark:text-gray-400">
                   {getEnUsDate(new Date(date))}
                 </span>
               </div>

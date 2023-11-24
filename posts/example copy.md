@@ -1,8 +1,8 @@
 ---
-title: '글 예시'
+title: '글 예시 예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글예시 글'
 date: '2023.09.05'
 category: webdocument
-description: '예시 글입니다.'
+description: '예시 글'
 tags: ['study', '개발']
 thumbnail: 'thumbnail.png'
 ---

@@ -19,7 +19,7 @@ const syntaxHighlighter = {
   h1: ({ node, className, children, inline, ...props }:any) => (
     <h1
       {...props}
-      className='mt-10 mb-6 pt-24 text-3xl font-bold' 
+      className='pt-32 mt-10 mb-6 text-3xl font-bold' 
       id={getPostNavLinkId(children)}
       >
       {children}
@@ -28,7 +28,7 @@ const syntaxHighlighter = {
   h2:({ node, className, children, inline, ...props }:any) => (
     <h2
       {...props}
-      className='mt-10 mb-6 pt-24 text-2xl font-bold'  
+      className='pt-32 mt-10 mb-6 text-2xl font-bold'  
       id={getPostNavLinkId(children)}
     >
       {children}
@@ -37,7 +37,7 @@ const syntaxHighlighter = {
   h3:({ node, className, children, inline, ...props }:any) => (
     <h3
       {...props}
-      className='mt-10 mb-6 pt-24 text-xl font-bold' 
+      className='pt-32 mt-10 mb-6 text-xl font-bold' 
       id={getPostNavLinkId(children)}
     >
       {children}
@@ -77,7 +77,7 @@ const syntaxHighlighter = {
           width={560}
           height={350}
         />
-        {alt && <span className="text-light text-sm">{alt}</span>}
+        {alt && <span className="text-sm text-light">{alt}</span>}
       </>
     );
   },
@@ -97,19 +97,19 @@ const syntaxHighlighter = {
     </a>
   ),
   p: ({ children, ...props }: any) => (
-    <p {...props} className="text-md mb-8 font-light sm:text-lg">
+    <p {...props} className="mb-8 font-light text-md sm:text-lg">
       {children}
     </p>
   ),
   ol: ({ children, ...props }: any) => (
-    <ol {...props} className="flex flex-col gap-1 mb-6 list-inside list-decimal" ordered="true">
+    <ol {...props} className="flex flex-col gap-1 mb-6 list-decimal list-inside" ordered="true">
       {children}
     </ol>
   ),
   ul: ({ children, depth, ...props }: any) => (
     <ul
       {...props}
-      className='ml-4 flex flex-col gap-1 mb-6 list-inside list-disc'
+      className='flex flex-col gap-1 mb-6 ml-4 list-disc list-inside'
       ordered="true"
     >
       {children}
@@ -121,7 +121,7 @@ const syntaxHighlighter = {
     </li>
   ),
   hr: ({ ...props }) => (
-    <hr className='border-t-1 my-6 border-gray-300' {...props} />
+    <hr className='my-6 border-gray-300 border-t-1' {...props} />
   ),
 };
 

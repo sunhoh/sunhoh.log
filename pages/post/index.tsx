@@ -14,34 +14,21 @@ const Posts = ({ posts }: { posts: Post[] }) => {
 
   
   return (
-    <section className="mt-10">
-      <div className='mt-10 gap-8 flex'>
-        <Sidebar />
+    <section>
+      <div className='flex gap-6'> 
+        <Sidebar/>
         <div className='w-full'>
-          <article>
-            <div className='flex items-center justify-between'>
-                <h1 className="pb-2 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 text-4xl sm:text-4xl sm:leading-10 lg:text-5xl lg:leading-14">
-                  posts
-                </h1>
-                {/* <div className='flex cursor-pointer lg:hidden'> 
-                  {['홈'].map((v)=>{
-                    return (
-                      <div key={v} 
-                          className='px-4 py-1 rounded-lg hover:shadow-inner hover:bg-slate-100' 
-                          onClick={onNaviagtion}
-                        >  {v}
-                      </div>
-                    )
-                  })}
-                </div>  */}
-              </div>
+          <div className='flex items-center justify-between'>
+            <h2 className="mb-16 font-serif font-semibold leading-10 dark:text-gray-100">게시글</h2>
+          </div>
+          <article>   
             <LayoutFullpage
               constents={
-                <ul>
+                <>
                   {posts.map((item: Post, idx: number) => {
                     return <PostItem key={idx} data={item} />;
                   })}
-                </ul>
+                </>
               }
             />
           </article>
@@ -62,3 +49,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+

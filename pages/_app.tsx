@@ -8,7 +8,6 @@ import { fontSans, fontMono } from 'lib/font/fonts';
 /* components */
 import Helmet from 'components/html-head/Helmet';
 
-
 const DynamicLayout = dynamic(() => import('../layout/Layout'), { ssr: false });
 
 export default function App({ Component, pageProps }: AppProps) {
