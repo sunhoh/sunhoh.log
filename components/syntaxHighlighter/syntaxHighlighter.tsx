@@ -19,7 +19,7 @@ const syntaxHighlighter = {
   h1: ({ node, className, children, inline, ...props }:any) => (
     <h1
       {...props}
-      className='pt-32 mt-10 mb-6 text-3xl font-bold' 
+      className='pt-32 mt-10 mb-6 text-3xl font-bold leading-10' 
       id={getPostNavLinkId(children)}
       >
       {children}
@@ -28,7 +28,7 @@ const syntaxHighlighter = {
   h2:({ node, className, children, inline, ...props }:any) => (
     <h2
       {...props}
-      className='pt-32 mt-10 mb-6 text-2xl font-bold'  
+      className='pt-32 mt-10 mb-6 text-2xl font-bold leading-10'  
       id={getPostNavLinkId(children)}
     >
       {children}
@@ -37,7 +37,7 @@ const syntaxHighlighter = {
   h3:({ node, className, children, inline, ...props }:any) => (
     <h3
       {...props}
-      className='pt-32 mt-10 mb-6 text-xl font-bold' 
+      className='pt-32 mt-10 mb-6 text-xl font-bold leading-10' 
       id={getPostNavLinkId(children)}
     >
       {children}

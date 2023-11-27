@@ -100,3 +100,9 @@ export const getEnUsDate = (date: Date) => {
 
   return `${month} ${day}. ${year}`;
 };
+export const getEnUsShortDate = (date: Date) => {
+  const month = date.toLocaleString('en-US', { month: 'short' });
+  const day = date.getDate();
+
+  return `${month} ${day}`;
+};

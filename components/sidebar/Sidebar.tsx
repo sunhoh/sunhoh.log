@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import Link from 'next/link';
-import {TableOfContents} from 'types/post'
+import { TableOfContents } from 'types/post'
 import { DEFAULT_PATHS } from 'lib/config';
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { useRouter } from 'next/router';
 
-const Sidebar = ({ toc}:{ toc?:TableOfContents}) => {
+const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
   const router = useRouter()
 
   const onNaviagtion = (event: { preventDefault: () => void; }) => {
@@ -16,10 +16,10 @@ const Sidebar = ({ toc}:{ toc?:TableOfContents}) => {
   }
 
   return (
-    <nav className='sticky self-start top-[128px] min-w-[220px] max-w-[260px] lg:hidden'>
+    <nav className='sticky self-start top-[128px] md:hidden'>
       <div className='flex items-center cursor-pointer hover:brightness-200' onClick={onNaviagtion}>
         <CsLineIcons icon='arrow-uturn-left' className="mr-2" fill='#3f4046' size={15} />
-        <span className="font-sans leading-10">{router.pathname === '/post' ? '홈' : '뒤로가기'}</span>
+        <span className="font-sans font-semibold leading-10 dark:text-gray-100">{router.pathname === '/post' ? '홈' : '뒤로가기'}</span>
       </div>
       <ul className="mt-12 space-y-2.5 font-sans text-sm text-gray-11 ">
           {toc?.map((section) => {

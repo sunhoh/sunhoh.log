@@ -1,3 +1,4 @@
+@import url('https://webfontworld.github.io/amore/AritaBuri.css');
 /* in styles/global.css */
 @tailwind base;
 @tailwind components;
@@ -38,4 +39,16 @@ a {
 li > ol,
 li > ul {
   margin-left: 16px;
+}
+
+ .main-grid{
+  display: grid;
+  grid-template-columns: 192px 640px 192px;
+  align-items: start;
+  gap: 20px;
+} 
+
+.main-grid main {
+  width: 100%;
+  grid-column: 2;
 }
