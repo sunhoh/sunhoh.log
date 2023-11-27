@@ -4,7 +4,7 @@ import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { Post } from 'types/post';
 import { getEnUsShortDate } from 'utils/post';
 
-  const PostItem = ({data,index}:{ data: Post,index:number }) => {
+  const PostItem = ({data}:{ data: Post }) => {
   const { postId, title, date, category, description, tags, thumbnail } = data;  
 
   return (

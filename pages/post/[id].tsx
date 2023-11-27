@@ -5,7 +5,7 @@ import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
 import { getAllPostPaths, getPostData, getEnUsDate } from 'utils/post';
 import { PostMeta } from 'types/post';
 // import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
-import { useTheme  } from 'next-themes';
+// import { useTheme  } from 'next-themes';
 import PostNavigation from 'components/post-navigation/PostNavigation'
 import LayoutGridpage from 'layout/LayoutGridpage'
 
