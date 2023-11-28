@@ -1,4 +1,4 @@
 export const DEFAULT_PATHS = {
-  HOME: '/',
-  NOTFOUND: '/page-not-found',
+  HOME: '/posts',
+  NOTFOUND: '/_error',
 };

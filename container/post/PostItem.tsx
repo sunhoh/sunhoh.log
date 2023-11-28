@@ -17,7 +17,7 @@ const PostItem = ({ data: [year, postList] }: { data: [string, Post[]] }) => {
         return (
           <Link
             key={`${postId}-${idx}`}
-            href={`/post/${postId}`}
+            href={`/posts/${postId}`}
             className="flex items-center gap-3 transition-opacity group"
           > 
           <div className="flex items-center flex-1 w-full py-3 group-hover:opacity-60">

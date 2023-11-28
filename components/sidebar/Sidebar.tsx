@@ -9,11 +9,11 @@ import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
   const router = useRouter()
   const { theme, setTheme } = useTheme();
-
+  
   const onNaviagtion = (event: { preventDefault: () => void; }) => {
     event.preventDefault()
-
-    if(router.pathname === '/post') alert('준비중입니다.')
+    
+    if(router.pathname === '/posts') alert('준비중입니다.')
     else router.push(DEFAULT_PATHS.HOME)
   }
   
@@ -21,7 +21,7 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
     <nav className='px-2 sticky self-start top-[128px] md:hidden'>
         <div className='flex items-center cursor-pointer w-fit hover:brightness-200' onClick={onNaviagtion}>
           <CsLineIcons icon='arrow-up-left' className="mr-2"  size={15} />
-          <span className="font-sans leading-10 dark:text-gray-100">{router.pathname === '/post' ? '홈' : '뒤로가기'}</span> 
+          <span className="font-sans leading-10 dark:text-gray-100">{router.pathname === '/posts' ? '홈' : '뒤로가기'}</span> 
         </div>
         <ul className="mt-12 space-y-2.5 font-sans text-sm text-gray-11 ">
             {toc?.map((section) => {
@@ -40,7 +40,7 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
             })}
         </ul>
 
-        <div className='pt-6 mt-16 border-b '/>
+        <div className='pt-6 mt-16 w-[60%] border-b '/>
         <div className='py-2'>
           <div
             className="p-1 rounded-lg cursor-pointer w-fit hover:bg-neutral-100 dark:bg-neutral-800 "
