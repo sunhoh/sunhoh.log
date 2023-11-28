@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import * as remarkHtml from 'remark-html';
 import { differenceInDays } from 'date-fns';
-import { TableOfContents } from 'types/post';
+import { Post, TableOfContents } from 'types/post';
 
 const postRoute = path.join(process.cwd(), 'posts');
 
@@ -100,9 +100,19 @@ export const getEnUsDate = (date: Date) => {
 
   return `${month} ${day}. ${year}`;
 };
+
 export const getEnUsShortDate = (date: Date) => {
   const month = date.toLocaleString('en-US', { month: 'short' });
   const day = date.getDate();
 
-  return `${month} ${day}`;
+  return `${month} ${day}﹒`;
 };
+
+export const yearEntriesCb = (acc:{ [year: string]: Post[] }, v:Post) => {
+  const year = new Date(v.date).getFullYear();
+  if(!acc[year]){
+    acc[year] = []  
+  }
+  acc[year].push(v);
+  return acc;
+}
