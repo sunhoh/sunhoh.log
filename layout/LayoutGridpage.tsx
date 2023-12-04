@@ -1,6 +1,9 @@
 import React from 'react';
 import Sidebar from 'components/sidebar/Sidebar';
 import { TableOfContents } from 'types/post'
+import { DEFAULT_PATHS } from 'lib/config';
+import { useRouter } from 'next/router';
+
 
 interface IProps {
   toc?:TableOfContents
@@ -8,9 +11,11 @@ interface IProps {
 }
 
 const LayoutGridpage = ({ children, toc }: IProps) => {
+  const router = useRouter()
+
   return (
     <>
-      <Sidebar toc={toc}/> 
+      {router.pathname !== DEFAULT_PATHS.HOME ? <Sidebar toc={toc}/> : <></>  }
       <main>{children}</main>
     </>
   );

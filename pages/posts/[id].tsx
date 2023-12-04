@@ -4,14 +4,11 @@ import ReactMarkdown from 'react-markdown';
 import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
 import { getAllPostPaths, getPostData, getEnUsDate } from 'utils/post';
 import { PostMeta } from 'types/post';
-// import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
-// import { useTheme  } from 'next-themes';
 import PostNavigation from 'components/post-navigation/PostNavigation'
 import LayoutGridpage from 'layout/LayoutGridpage'
 
 export default function Post({ data }: { data: PostMeta }) {
   const { contentHtml, date, title, description, thumbnail, tableOfContents, postNavigationProps } = data;
-  // const { theme } = useTheme()
 
   return (
     <>
@@ -23,7 +20,6 @@ export default function Post({ data }: { data: PostMeta }) {
               {title}
             </h1>
             <div className="flex">
-              {/* <CsLineIcons icon="calendar" fill={theme==='dark' ? "#e5e7eb" : "#000"} stroke="0" className="h-5" /> */}
               <span className="text-sm leading-6 text-gray-500 dark:text-gray-400">
                 {getEnUsDate(new Date(date))}
               </span>
@@ -36,7 +32,7 @@ export default function Post({ data }: { data: PostMeta }) {
               components={syntaxHighlighter as any}
             />
           </div>
-          <hr className='mb-10 mt-20 h-[1px] w-full border-gray-300'/>  
+          <hr className='mb-10 mt-24 h-[1px] w-full border-gray-300'/>  
           {/*  post navigation  */}
           <PostNavigation {...postNavigationProps}/>
         </article>

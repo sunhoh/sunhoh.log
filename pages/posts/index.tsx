@@ -9,7 +9,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
 
   return (
     <LayoutGridpage>
-      <div className='px-4'>
+      <div className='px-3 md:px-6'>
         <div className='flex items-center justify-between'>
           <h2 className="mb-16 font-sans font-semibold leading-10 ">게시글</h2>
         </div>

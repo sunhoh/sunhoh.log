@@ -5,7 +5,7 @@ import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 const Footer = () => {
   return (
     <footer className="mx-auto text-sm border-t text-neutral-800 dark:text-neutral-400">
-      <div className="flex items-end justify-between px-4 py-3 mx-auto max-w-page">
+      <div className="px-3 py-3 footer md:px-6">
         <span className="font-sans text-sm font-normal text-gray-500">
           {/* © 2023 sunhoh blog Powered by Next.js, vercel */}
           Shine, constantly and steadily.

@@ -26,9 +26,6 @@ module.exports = {
         '2xl': '0 25px 40px -10px rgba(0, 0, 0, 0.3)',
         '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
       },
-      gridTemplateColumns: {
-        main: 'auto 640px auto',
-      },
       maxWidth: {
         page: 1072,
         content: 640,
