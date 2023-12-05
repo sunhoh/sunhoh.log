@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { PostNavigationProps } from 'types/post'
 
 const PostNavigation = ({ prevPost, nextPost }:PostNavigationProps) => {
-    console.log(prevPost, nextPost)
 
     return (
         <div className='flex items-center justify-between text-sm'>
