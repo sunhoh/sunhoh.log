@@ -1,6 +1,12 @@
 module.exports = {
-  env: { node: true, es6: true },
+  env: { browser:true ,node: true, es6: true },
   plugins: [],
   extends: [],
-  rules: {},
+  rules: {
+    "no-unused-vars" : 2,
+    "no-undef" : 2
+  },
+  parserOptions: {
+    sourceType: "module"
+  }
 };
