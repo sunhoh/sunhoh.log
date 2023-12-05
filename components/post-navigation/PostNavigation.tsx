@@ -2,10 +2,11 @@ import Link from 'next/link'
 import { PostNavigationProps } from 'types/post'
 
 const PostNavigation = ({ prevPost, nextPost }:PostNavigationProps) => {
-    
+    console.log(prevPost, nextPost)
 
     return (
         <div className='flex items-center justify-between text-sm'>
+          {!prevPost && !nextPost && <div className='h-[68px]' />}
           {prevPost ? (
             <Link href={`/post/${prevPost.postId}`} className='flex flex-col max-w-[60%] tracking-tight hover:brightness-125 '>
                 <div className='mb-2 font-light text-gray-400'>Prev</div>

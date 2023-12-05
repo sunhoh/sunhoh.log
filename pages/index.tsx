@@ -8,10 +8,10 @@ import { CONNECT_HREF } from 'lib/config'
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 
 const Home = ({ posts }: { posts: Post[] }) => {
-  
+
   return (
     <>
-      <Helmet title={'sunhoh'} /> 
+      <Helmet title='sunhoh' description='sunhoh blog' url='' /> 
       <LayoutGridpage>
         <div className='px-3 md:px-6'>
           <div className=''>
@@ -32,31 +32,26 @@ const Home = ({ posts }: { posts: Post[] }) => {
             <p className='font-mono tracking-tighter text-gray-500 text-md'>Connect</p>
 
             <div className='flex items-end gap-2'>
-
               {CONNECT_HREF.map(({key, href})=> (
-                <>
+                <div key={key}>
                   {key.includes('@') && <span className='font-mono text-sm'>Email: </span>}
-                  <Link 
-                    key={key}
-                    href={href}
-                    target="_blank" 
-                    rel="noreferrer"
-                    className='mt-2 font-mono text-sm rounded hover:bg-slate-200'>
-                      {key}
-                  </Link>
-                </>
+                    <Link 
+                      href={href}
+                      target="_blank" 
+                      rel="noreferrer"
+                      className='mt-2 font-mono text-sm rounded hover:bg-slate-200'>
+                        {key}
+                    </Link>
+                </div>
               ))}
             </div>
           </div>
 
-          
-
           <div className='flex justify-between gap-8 mt-12 '>
-
             <div className='flex-1 '>
               <h2 className="mb-4 font-mono tracking-tighter text-gray-500 text-md">About me</h2>
               <div className='flex items-center gap-1'>
-                <Link href="/" className="font-serif font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                <Link href="/resume" className="font-serif font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
                   resume
                 </Link>
                 <CsLineIcons icon='arrow-up-right' className="mr-2" size={15} />

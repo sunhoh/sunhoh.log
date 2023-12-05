@@ -1,6 +1,6 @@
 ---
 title: '글 예시'
-date: '2023.09.05'
+date: '2022.01.01'
 category: webdocument
 description: '예시 글입니다.'
 tags: ['study', '개발']

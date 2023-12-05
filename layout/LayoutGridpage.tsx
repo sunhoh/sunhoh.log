@@ -15,7 +15,7 @@ const LayoutGridpage = ({ children, toc }: IProps) => {
 
   return (
     <>
-      {router.pathname !== DEFAULT_PATHS.HOME ? <Sidebar toc={toc}/> : <></>  }
+      {router.pathname.includes(DEFAULT_PATHS.BLOG) ? <Sidebar toc={toc}/> : <></>  }
       <main>{children}</main>
     </>
   );
