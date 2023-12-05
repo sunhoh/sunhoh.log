@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
     {/*  */}
-      <div className="mx-auto max-w-page py-page">
+      <div className="mx-auto max-w-page py-page md:py-16">
         {router.pathname !== DEFAULT_PATHS.NOTFOUND
           ? <div className="mx-auto main-grid md:flex md:flex-col md:items-center ">{children}</div> 
           : <div>{children}</div> 
