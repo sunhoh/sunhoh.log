@@ -4,7 +4,7 @@ import Helmet from 'components/html-head/Helmet'
 import Link from 'next/link'
 import { getAllPosts } from 'utils/post';
 import { Post } from 'types/post';
-import { CONNECT_HREF } from 'lib/config'
+import { DEFAULT_PATHS, CONNECT_HREF } from 'lib/config'
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 
 const Home = ({ posts }: { posts: Post[] }) => {
@@ -21,9 +21,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
               <p>Next.js, typescript, tailwind, github-actions, vercel, SEO</p>
 
               <br /> 
-              <span>이 블로그는 </span>
+              {/* <span>이 블로그는 </span>
               <Link href='https://paco.me/' className='underline rounded hover:bg-slate-200'>paco.me</Link>
-              <span>참고해서 만들었습니다. </span>
+              <span>참고해서 만들었습니다. </span> */}
             </div>
 
           </div>
@@ -47,27 +47,28 @@ const Home = ({ posts }: { posts: Post[] }) => {
             </div>
           </div>
 
-          <div className='flex justify-between gap-8 mt-12 '>
-            <div className='flex-1 '>
-              <h2 className="mb-4 font-mono tracking-tighter text-gray-500 text-md">About me</h2>
+          <div className='flex justify-between gap-8 mt-12'>
+            <div className='flex-1'>
+              <h2 className="mb-4 font-mono tracking-tighter text-gray-500 text-md">About</h2>
               <div className='flex items-center gap-1'>
-                <Link href="/resume" className="font-serif font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
-                  resume
+                <Link href={`/${DEFAULT_PATHS.ABOUT}`} className="font-serif font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                  me...
                 </Link>
                 <CsLineIcons icon='arrow-up-right' className="mr-2" size={15} />
               </div>
             </div>
 
-            <div className='flex-1 '>
+            <div className='flex-1'>
               <h2 className="mb-4 font-mono tracking-tighter text-gray-500 text-md">Projects</h2>
                 <div 
                   className="font-serif font-semibold underline transition-all cursor-pointer decoration-gray-400 hover:decoration-gray-800"
                   onClick={()=> alert('게시글 작성중입니다..')}
-                >...
+                >
+                  ...
                 </div>
             </div>
 
-            <div className='flex-2 w-60'>
+            <div className='flex-1'>
               <h2 className="mb-4 font-mono tracking-tighter text-gray-500 text-md">Posts</h2>
               {posts
                 .slice(0,4)
@@ -84,9 +85,12 @@ const Home = ({ posts }: { posts: Post[] }) => {
                     <p className='text-sm tracking-tighter text-gray-500'>{description}</p>
                   </div>
                   )
-                })}
-              <div className="mt-8 text-sm tracking-tighter hover:underline">
-                <Link href="/posts">All Post ... </Link>
+              })}
+              <div className='flex items-center gap-1 mt-8'>
+                <Link href={`/${DEFAULT_PATHS.BLOG}`} className="font-serif font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                  all post...
+                </Link>
+                <CsLineIcons icon='arrow-up-right' className="mr-2" size={15} />
               </div>
             </div>
           </div>
