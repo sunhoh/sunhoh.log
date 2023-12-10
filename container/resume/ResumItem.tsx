@@ -12,7 +12,7 @@ export const Profile = () => {
         width={250}
         height={250}
       />
-      <ul className='list-disc list-inside cursor-pointer'>
+      <ul className='mt-3 list-disc list-inside cursor-pointer'>
         {CONNECT_HREF.map(({key, href})=> (
           <li 
             key={key}
@@ -34,13 +34,13 @@ export const Profile = () => {
 export const Introduce = () => {
   return (
     <div className='sans'>
-      <p className='text-gray-500'>"함께 성장하며 이룬 협업의 가치”</p>
+      {/* <p className='text-gray-500'>"함께 성장하며 이룬 협업의 가치”</p> */}
       <div className='mt-2 '>
         저는 함께 성정하는 것에 큰 동기를 얻습니다.
         스타트업에서 웹과 앱 서비스를 기획/개발/배포하며 짧은 기간 안에 팀원들과 함께 시스템을 구축해가며 사수가 없는 환경에서 소통, 공유하며 함께 성장해 나아간 경험이 있습니다. 이를 통해 좋은 가치를 추구하는 마인드 셋으로 다양한 직군의 구성원들과도 적극적으로 소통하며 협업해왔습니다.
       </div>
 
-      <p className='mt-8 text-gray-500'>"다양한 도전을 마주하며 얻은 경험”</p>
+      {/* <p className='mt-8 text-gray-500'>"다양한 도전을 마주하며 얻은 경험”</p> */}
       <div className='mt-2'>
       작은 규모의 팀에서 다양한 문제에 직면한 경험이 있습니다. 
       홈페이지 리뉴얼, 직원 채용 공고, 음원 관리 백오피스 개발등 시스템 전체를 구축하면서 다양한 시행착오를 경험하면서, 정형화된 체계가 미비한 환경에서 작은 것부터 큰것까지 유기적으로 연결된 구성 하나하나와 그것들로 이루어진 전체를 바라보려 노력합니다. 

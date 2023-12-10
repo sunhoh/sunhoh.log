@@ -1,7 +1,8 @@
 import React from 'react'
+import Link from 'next/link';
 import LayoutGridpage from 'layout/LayoutGridpage'
 import Helmet from 'components/html-head/Helmet'
-import { Profile, Introduce, Skills, WorkExperience, SideProject, Activities, Education } from 'container/resume/ResumItem'
+import { Profile } from 'container/resume/ResumItem'
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';
@@ -10,11 +11,10 @@ import { useRouter } from 'next/router';
 const About = () => {
   const { theme, setTheme } = useTheme();
   const router = useRouter()
-  // ['Introduce.','Skills.','Work Experience.','Side Project.','Activities.','Education.']
   
   return (
     <>
-      <Helmet title='sunhoh | resume' description='이력서' url=''/> 
+      <Helmet title='sunhoh | about' description='이력서' url=''/> 
       <LayoutGridpage>
         <div className='px-3 md:px-6'>
           <div>
@@ -35,25 +35,29 @@ const About = () => {
             </div> 
             <Profile />
           </div>
-
           <section>
-            {['Introduce.'].map((title,idx)=>{
-              return (
-                <div key={idx} className="mt-12" >
-                  <h2 className='text-lg mono'>{title}</h2>
-                  <hr className='my-4 h-[1px] w-full border-gray-300'/> 
+            <div className='mt-12 '>
+              <h2 className='text-lg mono'>Summary.</h2>
+              <hr className='my-4 h-[1px] w-full border-gray-300'/> 
 
-                  <div className='flex items-end gap-2'>
-                    {title === 'Introduce.' && <Introduce />}
-                    {/* {title === 'Skills.' && <Skills />} */}
-                    {/* {title === 'Work Experience.' && <WorkExperience />} */}
-                    {/* {title === 'Side Project.' && <SideProject />} */}
-                    {/* {title === 'Activities.' && <Activities />} */}
-                    {/* {title === 'Education.' && <Education />} */}
-                  </div>
+              <div className='sans'>
+                <div className='mt-2 font-mono text-sm tracking-tight'>
+                AI 음원을 다루는 스타트업에서 다양한 프로젝트를 수행해온 프론트엔드 개발자입니다.<br/>
+                1년 6개월이라는 경력 동안 웹/앱의 서비스와 백오피스 개발 경험을 했습니다.<br/>
+                성장이 고픈 주니어 개발자이기에 새로운 것을 익히고 학습하여 도전하는 것을 좋아합니다. <br/>
+                이해관계에 있는 다양한 직군의 구성원들과도 적극적으로 소통하며 협업해왔습니다.
                 </div>
-              )
-            })}
+              </div>
+
+              <div className='mt-6'>
+                <Link 
+                  href={`https://www.notion.so/Frontend-Engineer-0083eb17bac54e69ae1b694455b1e49a`} 
+                  target="_blank" 
+                  className="mt-6 font-mono font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                  Detailed Resume (Notion)
+                </Link>
+              </div>
+            </div>
           </section>          
         </div>
       </LayoutGridpage>
