@@ -42,21 +42,29 @@ const About = () => {
 
               <div className='sans'>
                 <div className='mt-2 font-mono text-sm tracking-tight'>
-                AI 음원을 다루는 스타트업에서 다양한 프로젝트를 수행해온 프론트엔드 개발자입니다.<br/>
-                1년 6개월이라는 경력 동안 웹/앱의 서비스와 백오피스 개발 경험을 했습니다.<br/>
+                사용자와 부드러운 상호작용과 가치를 추구하는 프론트엔드 개발자입니다.<br/>
+                인터페이스를 만들어가는 즐거움으로 개발하고 있습니다.<br/>
                 성장이 고픈 주니어 개발자이기에 새로운 것을 익히고 학습하여 도전하는 것을 좋아합니다. <br/>
-                이해관계에 있는 다양한 직군의 구성원들과도 적극적으로 소통하며 협업해왔습니다.
+                스타트업에서 짧은 기간 안에 시스템을 구축해가며 소통, 공유하며 함께 성장해 나아간 경험이 있습니다. <br/>
+                이를 통해 좋은 가치를 추구하는 마인드 셋으로 다양한 직군의 구성원들과도 적극적으로 소통하며 유기적으로 연결된 구성 하나하나와 그것들로 이루어진 전체를 바라보려 노력하고 있습니다.
                 </div>
               </div>
 
               <div className='mt-6'>
                 <Link 
-                  href={`https://www.notion.so/Frontend-Engineer-0083eb17bac54e69ae1b694455b1e49a`} 
+                  href={`/resume`}  
+                  className="font-mono font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                  Detailed Resume
+                </Link>
+                <Link 
+                  href={`https://www.notion.so/a31856a7393c4eac9b9f6da682146266`} 
                   target="_blank" 
-                  className="mt-6 font-mono font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
-                  Detailed Resume (Notion)
+                  className="ml-4 font-mono font-semibold underline transition-all decoration-gray-400 hover:decoration-gray-800">
+                  Portfolio (Notion)
                 </Link>
               </div>
+
+              
             </div>
           </section>          
         </div>
