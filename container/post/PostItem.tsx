@@ -22,8 +22,6 @@ const PostItem = ({ data: [year, postList] }: { data: [string, Post[]] }) => {
           <div className="flex items-center flex-1 w-full py-3 group-hover:opacity-60">
             <div className='w-full ml-[10%]'>
               <div className='flex items-center gap-1'>
-                
-
                 <span className='text-md'>{title}</span>
                 <span className="ml-1 text-xs leading-6 transition-all opacity-30 group-hover:opacity-100 dark:text-gray-400">
                   {getEnUsShortDate(new Date(date))}
@@ -31,16 +29,6 @@ const PostItem = ({ data: [year, postList] }: { data: [string, Post[]] }) => {
               </div>
               
               <div className='text-xs transition-all opacity-30 group-hover:opacity-100 dark:text-gray-400'>{description}</div>
-              {/* <ul className="flex gap-2 mt-1">
-                {tags.map((tag: string, index: number) => (
-                  <li
-                    key={index}
-                    className="text-xs font-light transition-all opacity-30 group-hover:opacity-100 dark:text-gray-400"
-                  >
-                    {`# ${tag}`}
-                  </li>
-                ))}
-              </ul> */}
             </div>
           </div>
         <CsLineIcons

@@ -28,18 +28,19 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
         <span className="leading-10 mono dark:text-gray-100">{nav_title}</span> 
         {/*  */}
       </div>
-      <ul className="mt-12 space-y-2.5 font-sans text-sm text-gray-11 ">
+      <ul className="mt-8 pt-8 space-y-2.5 font-sans text-sm text-gray-11 ">
           {toc?.map((section) => {
+            console.log(section)
             return (
               <Fragment key={section.slug}>
-                <li className='py-1 text-sm font-normal hover:font-bold'>
+                <li className='text-sm font-normal hover:font-bold'>
                   <a href={`#${section.slug}`}>{section.text}</a>
                 </li>
-                {section.subs.map((subSection) =>(
+                {/* {section.subs.map((subSection) =>(
                   <li key={subSection.slug} className="ml-4 text-sm font-normal hover:font-bold">
                     <a href={`#${subSection.slug}`}>{subSection.text}</a>
                   </li>
-                  ))}
+                  ))} */}
               </Fragment>
             )
           })}
