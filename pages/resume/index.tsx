@@ -50,7 +50,7 @@ const Resume = () => {
           
 
           <section>
-            {['Introduce.','Skills.','Work Experience.','Side Project.','Activities.','Education.'].map((title,idx)=>{
+            {['Introduce.','Skills.','Work Experience.','Side Project.','Activities.'].map((title,idx)=>{
               return (
                 <div key={idx} className="mt-12" >
                   <h2 className='text-lg mono'>{title}</h2>
@@ -62,7 +62,7 @@ const Resume = () => {
                     {title === 'Work Experience.' && <WorkExperience />}
                     {title === 'Side Project.' && <SideProject />}
                     {title === 'Activities.' && <Activities />}
-                    {title === 'Education.' && <Education />}
+                    {/* {title === 'Education.' && <Education />} */}
                   </div>
                 </div>
               )
