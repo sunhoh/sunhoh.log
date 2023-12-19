@@ -8,12 +8,11 @@ import { yearEntriesCb } from 'utils/post'
 
 
 const Posts = ({ posts }: { posts: Post[] }) => {
-
   return (
     <>
       <Helmet title='sunhoh | blog' description='all posts' url=''/> 
       <LayoutGridpage>
-        <div className='px-3 md:px-6'>
+        <div className='px-3 md:w-screen md:px-6'>
           <div className='flex items-center justify-between'>
             <h2 className="mb-[52px] font-sans font-semibold leading-10">Blog</h2>
           </div>
@@ -26,6 +25,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
             }
           </article>
         </div>
+        
       </LayoutGridpage>
     </>
     

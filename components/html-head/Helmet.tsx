@@ -10,7 +10,7 @@ type HelmetProps = {
 
 const Helmet = ({ title, description, image, keywords, url }: HelmetProps) => {
   const basicConfig = {
-    title: 'next-blog',
+    title: 'sunhoh.log',
     siteTitle: '>daldal',
     description: '쿠키 굽',
     url: '',

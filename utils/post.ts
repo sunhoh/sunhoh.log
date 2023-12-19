@@ -52,7 +52,7 @@ export const getPostData = async (postId: string) => {
 
   const contentHtml = processedContent.toString();
   const source: string[] = contentHtml.split('\n').filter(line => line.match(/^(#{1,3})\s/));
-  const tableOfContents = parseToc(source);  
+  const tableOfContents = parseToc(source);
 
   const postIndex = getAllPosts().findIndex(v => v.postId === postId)
   const postNavigationProps =  {
@@ -72,20 +72,23 @@ export const getPostData = async (postId: string) => {
 export const parseToc = (data: string[]) => {
   return data.reduce<TableOfContents>((acc, item) => {
     const rawText = item.replace(/^##*\s/, '');
-    const isSubTitle = item.split('#').length - 1 === 3;
+    const isSubTitle = item.split('#').length - 1 === 4;
 
     const section = {
       slug: rawText
         .trim()
         .toLowerCase()
         .replace(/\s/g, '-'),
-      text: rawText,
+      text: rawText
+        .trim()
+        .toLowerCase()
     };
 
     if (!isSubTitle) {
       acc.push({ ...section, subs: [] });
-    } else if (acc.length > 0) {
-      acc[acc.length - 1].subs.push({ ...section });
+    } 
+    else if (acc.length > 0) {
+      acc[acc.length - 1]?.subs.push({ ...section });
     }
 
     return acc;

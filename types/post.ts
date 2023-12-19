@@ -36,8 +36,7 @@ export type SubSection = {
 };
 
 export type Section = SubSection & {
-  subs: SubSection[];
-  
+  subs: SubSection[];  
 };
 
 export type TableOfContents = Section[];

@@ -19,7 +19,7 @@ const syntaxHighlighter = {
   h1: ({ node, className, children, inline, ...props }:any) => (
     <h1
       {...props}
-      className='pt-32 mt-10 mb-6 text-3xl font-bold leading-10' 
+      className='pt-32 mt-6 mb-6 text-3xl font-bold leading-10' 
       id={getPostNavLinkId(children)}
       >
       {children}
@@ -28,7 +28,7 @@ const syntaxHighlighter = {
   h2:({ node, className, children, inline, ...props }:any) => (
     <h2
       {...props}
-      className='pt-32 mt-10 mb-6 text-2xl font-bold leading-10'  
+      className='pt-32 mt-6 mb-6 text-2xl font-bold leading-10'  
       id={getPostNavLinkId(children)}
     >
       {children}
@@ -37,7 +37,7 @@ const syntaxHighlighter = {
   h3:({ node, className, children, inline, ...props }:any) => (
     <h3
       {...props}
-      className='pt-32 mt-10 mb-6 text-xl font-bold leading-10' 
+      className='pt-32 mt-6 mb-6 text-xl font-bold leading-10' 
       id={getPostNavLinkId(children)}
     >
       {children}
@@ -47,7 +47,7 @@ const syntaxHighlighter = {
   h4:({ node, className, children, inline, ...props }:any) => (
     <h4
       {...props}
-      className='mt-12 mb-6 text-xl font-bold' 
+      className='mb-6 font-bold text-md' 
     >
       {children}
     </h4>
@@ -71,7 +71,7 @@ const syntaxHighlighter = {
       <>
         <Image
           {...props}
-          className={`object-contain`}
+          className={`object-contain border mt-4 `}
           src={src}
           alt={alt}
           width={560}
@@ -82,7 +82,7 @@ const syntaxHighlighter = {
     );
   },
   strong: ({ children, ...props }: any) => (
-    <strong {...props} className="font-medium">
+    <strong {...props} className="font-bold ">
       {children}
     </strong>
   ),

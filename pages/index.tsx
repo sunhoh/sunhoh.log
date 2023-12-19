@@ -19,15 +19,9 @@ const Home = ({ posts }: { posts: Post[] }) => {
             <div className='font-mono text-sm tracking-tight'>
               <span>개인 공부를 위한 기술 블로그입니다.</span>
               <p>Next.js, typescript, tailwind, github-actions, vercel, SEO</p>
-
               <br /> 
-              {/* <span>이 블로그는 </span>
-              <Link href='https://paco.me/' className='underline rounded hover:bg-slate-200'>paco.me</Link>
-              <span>참고해서 만들었습니다. </span> */}
             </div>
-
           </div>
-          
           <div className="mt-12">
             <p className='font-mono tracking-tighter text-gray-500 text-md'>Connect</p>
 
@@ -73,7 +67,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
               {posts
                 .slice(0,4)
                 .map((post, idx)=>{
-                const { postId, date, title, description, thumbnail } = post;
+                const { postId, date, title, description } = post;
                 return (
                   <div key={idx} className='mt-4 truncate'>
                     <Link 
