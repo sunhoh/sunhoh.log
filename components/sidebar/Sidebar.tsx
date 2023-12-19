@@ -21,16 +21,15 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
 
   
   return (
-    <nav className='pl-6 sticky self-start top-[128px] md:hidden'>
+    <nav className='pl-6 sticky self-start top-[128px] md:hidden min-w-[150px]'>
       <div className='flex items-center cursor-pointer w-fit hover:brightness-200' onClick={onNaviagtion}>
         <CsLineIcons icon='arrow-up-left' className="mr-2" size={15} />
         {/*  */}
         <span className="leading-10 mono dark:text-gray-100">{nav_title}</span> 
         {/*  */}
       </div>
-      <ul className="mt-8 pt-8 space-y-2.5 font-sans text-sm text-gray-11 ">
+      <ul className="mt-8 pt-8 space-y-2.5 font-sans text-sm text-gray-11">
           {toc?.map((section) => {
-            console.log(section)
             return (
               <Fragment key={section.slug}>
                 <li className='text-sm font-normal hover:font-bold'>

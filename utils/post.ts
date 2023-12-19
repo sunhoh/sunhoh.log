@@ -79,12 +79,15 @@ export const parseToc = (data: string[]) => {
         .trim()
         .toLowerCase()
         .replace(/\s/g, '-'),
-      text: rawText,
+      text: rawText
+        .trim()
+        .toLowerCase()
     };
 
     if (!isSubTitle) {
       acc.push({ ...section, subs: [] });
-    } else if (acc.length > 0) {
+    } 
+    else if (acc.length > 0) {
       acc[acc.length - 1]?.subs.push({ ...section });
     }
 
