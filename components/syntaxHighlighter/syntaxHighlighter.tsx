@@ -71,13 +71,13 @@ const syntaxHighlighter = {
       <>
         <Image
           {...props}
-          className={`object-contain border mt-4 `}
+          className={`w-full object-contain border mt-4 `}
           src={src}
           alt={alt}
           width={560}
           height={350}
         />
-        {alt && <span className="text-sm text-light">{alt}</span>}
+        {alt && <span className="text-sm text-gray-400 text-light">{alt}</span>}
       </>
     );
   },

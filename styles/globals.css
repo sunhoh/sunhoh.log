@@ -17,7 +17,7 @@ body {
 }
 
 html.light > body {
-  @apply bg-white text-zinc-700;
+  @apply bg-white text-zinc-800;
 }
 html.dark > body {
   @apply text-white bg-zinc-900;
