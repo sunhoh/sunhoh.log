@@ -40,6 +40,7 @@ ReactDOMServer API 중 renderToString 예시로 이 함수는 인자로 React �
 
 ## 얕은 예제
 
+
 ```js
 // index.html
 <!DOCTYPE html>
@@ -134,6 +135,4 @@ ReactDOM.hydrateRoot(
 
 ![](/images/posts/ssr-with-react/response.png)
 
-
-
-
+[**github 예제**](https://github.com/sunhoh/react-ssr)
