@@ -2,8 +2,8 @@
 title: '브라우저의 로딩 과정'
 date: '2023.11.10'
 category: webdocument
-description: '브라우저의 로딩 과정'
-tags: ['dom', '개발']
+description: '웹은 어떻게 보여지는 것인가?'
+tags: ['dom', 'crp']
 thumbnail: 'thumbnail.png'
 ---
 
