@@ -1,7 +1,7 @@
 import React from 'react'
 import LayoutGridpage from 'layout/LayoutGridpage'
 import Helmet from 'components/html-head/Helmet'
-import {  Introduce, Skills, WorkExperience, SideProject, Activities } from 'container/resume/ResumItem'
+import {  Introduce, Skills, WorkExperience, SideProject, Activities } from 'container/resume/ResumeItem'
 import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
 import { useTheme } from 'next-themes';
 import { useRouter } from 'next/router';

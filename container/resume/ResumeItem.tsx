@@ -90,13 +90,20 @@ export const WorkExperience = () => {
 
           <li className='py-2'>
             <div className='flex'>
-              <h2>조은하루 -  </h2>
+              <Link 
+                href='https://happier-day-003532.framer.app/'
+                target="_blank" 
+                rel="noreferrer"
+                className='inline-block text-gray-500 last:ml-2'
+                >
+                  조은하루 -  
+              </Link>
               {[{ key:'Play Store', href:'https://play.google.com/store/apps/details?id=com.audiocard&pcampaignid=fdl_long&url=https://joeunharu.page.link/?link%3Dhttps://%25EC%25A1%25B0%25EC%259D%2580%25ED%2595%2598%25EB%25A3%25A8.com/%26apn%3Dcom.audiocard%26amv%3D1%26ibi%3Dcom.upvote-ent.AudioCard%26isi%3D6443407964&pli=1'},
                 {key:'App Store', href:'https://apps.apple.com/app/id6443407964'} ].map((e,idx)=>{
                 return (
                   <Link 
-                  key={idx}
-                    href='https://aismpro.com/'
+                    key={idx}
+                    href={e.href}
                     target="_blank" 
                     rel="noreferrer"
                     className='inline-block text-gray-500 link last:ml-2'
@@ -108,14 +115,15 @@ export const WorkExperience = () => {
             </div>
             <ol className='mt-2'>
             정부 지원 사업 <span className='font-bold'>투자 유치 성공</span> 한 프로젝트로 기획부터 출시까지 올타임 개발 참여 React-Native를 사용하여 음원 라이브러리에 저장되어 있는 음원을 조은하루 서비스에 백업하여 편지 쓰기 기능에 음원을 입혀 공유하기 서비스
-              <li>- 음원 스트리밍 기능 개발</li>
-              <li>- 터치 이벤트를 이용한 인터렉션한 기능 개발</li>
+              <li>- 초기세팅 및 Native Stack Navigator 을 이용한 스택 구성</li>
+              <li>- react-native-track-player 를 이용한 음원 스트리밍 기능 개발</li>
+              <li>- PanResponder를 이용한 인터렉션한 기능 개발</li>
               <li>- firebase를 이용한 푸시알림, 다이나믹 링크</li>
               <li>- 카톡, 페이스북 공유하기</li>
+              <li>- 편지 공유 받을시 웹뷰</li>
               <li>
               - 주요 언어 및 기술<br/><span className='text-gray-500'>React, Typescript, HTML, scss, recoil, react-query, chat.js</span>
               </li>
-            
             </ol>
           </li>
 
@@ -139,7 +147,7 @@ export const WorkExperience = () => {
 
           <li className='py-2'>
             <Link 
-              href='https://www.upvote-ent.com/'
+              href='https://community-screw-136928.framer.app/'
               target="_blank" 
               rel="noreferrer"
               className='text-gray-500 link'
@@ -152,18 +160,20 @@ export const WorkExperience = () => {
               - 주요 언어 및 기술<br/><span className='text-gray-500'>React, Typescript, HTML, styled-components, redux-toolkit </span>
               </li> 
               
+              
             </ol>
           </li>
 
           <li className='py-2'>
-            <Link 
+            {/* <Link 
               href='https://aismpro.com/'
               target="_blank" 
               rel="noreferrer"
               className='text-gray-500 link'
               >
                 AISM Pro
-            </Link>
+            </Link> */}
+            <h2>AISM Pro</h2>
             
             <ol className='mt-2'>
               <li>- Ai bgm 음원 생성 서비스를 생성및 유튜브에 업로드 하는 프로젝트로 일부 변동 페이지 기획/개발 참여</li>
