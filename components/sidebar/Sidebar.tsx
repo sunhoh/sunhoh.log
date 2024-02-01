@@ -16,9 +16,6 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
     if(innerText === 'Blog') router.push(DEFAULT_PATHS.BLOG)
     if(innerText === 'Home') router.push(DEFAULT_PATHS.HOME)
   }
-
-  
-
   
   return (
     <nav className='pl-6 sticky self-start top-[128px] md:hidden min-w-[150px]'>
@@ -44,9 +41,9 @@ const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
             )
           })}
       </ul>
-      <hr className='w-[70%] mt-[75px] mb-10 border-gray-300'/>
+      {/* <hr className='w-[70%] mt-[75px] mb-10 border-gray-300'/> */}
       <div
-        className="p-1 rounded-lg cursor-pointer w-fit hover:bg-neutral-100 dark:bg-neutral-800 "
+        className="p-1 mt-20 rounded-lg cursor-pointer w-fit hover:bg-neutral-100 dark:bg-neutral-800 "
         onClick={() => (theme === 'dark' ? setTheme('light') : setTheme('dark'))}
       >
         <CsLineIcons icon={theme === 'dark' ? 'moon' : 'sun'} stroke="1" fill="#facc13" />
