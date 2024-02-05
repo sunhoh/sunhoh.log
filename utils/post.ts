@@ -18,8 +18,6 @@ export const getAllPosts = () => {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
-
-
     return {
       postId,
       ...matterResult.data,
