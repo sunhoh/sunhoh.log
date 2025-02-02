@@ -1,15 +1,8 @@
-/** @type {import('next').NextConfig} */
+const { withContentlayer } = require("next-contentlayer");
 
 const nextConfig = {
+  /* config options here */
   reactStrictMode: true,
-  experimental: {
-    appDir: true,
-  },
-  webpack: config => {
-    config.resolve.fallback = { fs: false };
-
-    return config;
-  },
+  swcMinify: true,
 };
-
-module.exports = nextConfig;
+module.exports = withContentlayer(nextConfig);
