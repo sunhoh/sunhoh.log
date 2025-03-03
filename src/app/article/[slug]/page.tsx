@@ -2,7 +2,8 @@ import React from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { allPosts } from '@/../.contentlayer/generated'
-import { MdxComponents } from '@/features/MdxComponents'
+import { Mdx } from '@/features/Mdx'
+import { formatDate } from '@/shared/utils/formatDate'
 
 
 const page = async ({ params }:any) => {
@@ -12,15 +13,7 @@ const page = async ({ params }:any) => {
   if (!article) notFound();
 
   return(
-    <article className="mt-32 ">
-      <header>
-        <h1 className="mb-0 text-4xl font-extrabold leading-tight text-gray-800 break-words mt-9">
-          {article.title}
-        </h1>
-      </header>
-      <p className="mt-0 text-lg font-normal text-zinc-700 dark:text-zinc-300">
-          {article.description}
-        </p>
+    <article className="mt-12 prose prose-blue dark:prose-invert max-w-none">
       {article.thumbnail && (
         <Image
           className="w-full max-h-[400px] object-cover"
@@ -30,7 +23,30 @@ const page = async ({ params }:any) => {
           height={400}
         />
       )}
-      <MdxComponents code={article.body.code}/>
+
+      <header className=" border-b">
+        <div>
+          <h1 className="mb-0 text-4xl font-extrabold leading-tight break-words mt-9">
+            {article.title}
+          </h1>
+          <p className="text-base font-normal text-[#4e5968] ">
+            {formatDate(article.date)}
+          </p>
+        </div>
+        
+        <div className="flex gap-2 mb-12">
+          {article.tags?.map((tag)=>(
+            <div key={tag}  
+            className="w-fit bg-[#eff4f8] rounded-full px-4 py-1 cursor-pointer text-[#4e5968] text-sm"
+            > 
+            #{tag}
+          </div>
+          ))}
+        </div>
+      </header>
+      <div className="mt-12">
+        <Mdx code={article.body.code}/>
+      </div>
     </article>
   )
 }

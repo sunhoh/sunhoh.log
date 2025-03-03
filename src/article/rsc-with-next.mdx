@@ -4,6 +4,7 @@ date: '2024.01.10'
 category: webdocument
 description: 'next의 app router'
 tags: ['next']
+thumbnail: 'thumbnail.png'
 ---
 
 
@@ -44,7 +45,7 @@ Server Component가 도입되면서 이제는 페이지의 최상단이 아닌 �
 
 ### 언제 rsc를 사용해야 할까?
 
-![](/images/posts/rsc-with-next/when.png)
+![](/images/article/rsc-with-next/when.png)
 
 표를 해석하면 React Hook이나 브라우저 API를 사용하려면 반드시 Client Component 로 만들어야 한다. (직렬화가 되어야 하므로) 아니라면 Server Component 사용
 
@@ -118,14 +119,14 @@ Server Component에서는 데이터를 가져오는 로직을 Server Side로 이
 **Loading UI and Streaming**
 
 
-![기존 SSR의 Streaming](/images/posts/rsc-with-next/streaming1.png)
+![기존 SSR의 Streaming](/images/article/rsc-with-next/streaming1.png)
 
 A: 서버에서 필요한 데이터를 받아온다.  
 B: 데이터를 바탕으로 서버에서 html을 그려 보낸다.(TTFB)  
 C: 클라이언트에서 non-interactive UI가 우선 표시된다.(FCP)  
 D:  JS를 기반으로 하이드레이션이 일어나 인터랙션이 가능해진다.(TTI)  
 
-![RSC Streaming](/images/posts/rsc-with-next/streaming2.png)
+![RSC Streaming](/images/article/rsc-with-next/streaming2.png)
 
 **Next13은 suspense와 함께 streaming지원**  
 직접 suspense경계를 만들거나 loading 컨벤션을 사용할 수 있음.  

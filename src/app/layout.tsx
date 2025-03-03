@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ThemeProvider  } from "next-themes";
+import { ThemeProvider } from '@/widgets/themeProvider'
+import LayoutWrapper from '@/widgets/layout/LayoutWrapper'
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,15 +16,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <head>
         <link rel="icon" type="image/png" href="/images/favicon.png" />
       </head>
-      <body>
-        <ThemeProvider attribute="class">
-          <div className="border">
-            {/* <header>
+      <body className="bg-background dark:bg-foreground">
+        <ThemeProvider>
+          {/* <header>
               <div className="flex items-center justify-between px-24 py-4 h-[60px] fixed top-0 w-full z-10 bg-white">
                 <nav className="space-x-6 text-lg font-medium">
                   <Link href={DEFAULT_PATHS.HOME}>Home</Link>
@@ -32,8 +33,9 @@ export default function RootLayout({
                 <ThemeToggle />
               </div>
             </header> */}
-            <main className="max-w-3xl mx-auto my-14 px-4">{children}</main>
-          </div>
+          <main className="max-w-3xl mx-auto my-14 px-4">
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </main>
         </ThemeProvider>
       </body>
     </html>

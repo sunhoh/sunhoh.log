@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import Link from "next/link";
-import { allPosts } from "@/../.contentlayer/generated";
+import { allPosts } from '@/../.contentlayer/generated'
 
-export default function Home() {
+export default function Developer() {
   const posts = allPosts.sort(
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   );
@@ -17,7 +17,7 @@ export default function Home() {
             <Link  href={post.url} className="flex items-center justify-between">
               <div className='flex-1'>
                 <h1 className="text-h6">{post.title}</h1>
-                <p className="mt-2 break-words text-p text-gray-700 dark:text-gray-500">{post?.description}</p>
+                <p className="mt-2 text-gray-700 break-words text-p">{post?.description}</p>
               </div>
               <div className='w-[130px] h-[100px] border rounded-lg overflow-hidden'>
                 <Image 
@@ -32,6 +32,6 @@ export default function Home() {
           </article>
         );
       })}
-    </div>
-  );
+    </div> 
+  )
 }
