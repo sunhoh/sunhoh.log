@@ -4,28 +4,29 @@ import { useState, ReactNode } from 'react';
 import Link from "next/link";
 import { allPosts } from "@/../.contentlayer/generated";
 import { ThemeToggle } from '@/features/ThemeToggle'
+import { DEFAULT_PATHS } from '@/shared/lib/config'
 
 export default function LayoutWrapper({ children }:{ children: ReactNode}) {
-  const tabs = [{type:"전체",href:'/' },{type:"개발",href:'/dev'} ];
-  const [selectedTab, setSelectedTab] = useState("전체");
-
+  const tabs =[{type:"Article", href: DEFAULT_PATHS.HOME }];
+  const [selectedTab, setSelectedTab] = useState("Article");
+  
   const posts = allPosts.sort(
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   );
   const uniqueTags = [...new Set(posts.map(e=>e.tags).flat())];
 
   return (
-      <section className="w-full min-h-[60px] flex justify-evenly "> 
+      <section className="w-full min-h-[60px] flex justify-evenly"> 
         <div className="w-full">
-          <div className="z-10 sticky top-0 w-full my-2 flex border-b border-gray-300 bg-background dark:bg-foreground ">
+          <div className="pt-12 z-10 sticky top-0 w-full flex justify-between border-b border-gray-300 bg-background  dark:bg-foreground">
             {tabs.map(({ type, href }) => (
               <div 
                 key={`tab-${type}`} 
-                className={`relative py-4 mt-2 border-b-1 transition-all ${selectedTab === type ? "border-black" : "border-transparent"}`}
+                className={`pb-4 relative border-b-1 transition-all ${selectedTab === type ? "border-black" : "border-transparent"}`}
               > 
                 <Link
                   href={href}
-                  className={`px-4 py-4 text-md font-medium rounded
+                  className={`px-4 text-md font-medium rounded
                     ${selectedTab === type ? "font-bold " : "text-gray-400"}  
                   `}
                   onClick={() => setSelectedTab(type)}

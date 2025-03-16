@@ -1,7 +1,7 @@
 export const DEFAULT_PATHS = {
   HOME: '/',
-  ABOUT:'/about',
-  NOTFOUND: '/_error',
+  // ABOUT:'/about',
+  // NOTFOUND: '/_error',
 };
 
 export const CONNECT_HREF = [

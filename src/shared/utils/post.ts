@@ -14,17 +14,12 @@ export const getAllPosts = () => {
     
     const matterResult = matter(fileContents);
 
+    
+
     return {
       postId,
       ...matterResult.data,
     };
   });
-
   return allPostsData
-
-  // const sortedPostList = allPostsData.sort((a:any, b:any) => 
-    // differenceInDays(new Date(b.date), new Date(a.date)),
-  // );
-
-  // return sortedPostList;
 };

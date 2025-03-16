@@ -8,6 +8,7 @@ export function ThemeToggle() {
 
   return (
     <button
+      className="pb-4"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}  
     >
       <span className="sr-only">Toggle mode</span>

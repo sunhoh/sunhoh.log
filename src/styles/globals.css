@@ -1,0 +1,49 @@
+@import url("https://cdn.jsdelivr.net/gh/taevel02/typeface-arita/arita.min.css");
+@import 'animation.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Arita Buri', sans-serif !important;
+  }
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #19181f;
+  }
+}
+
+@layer base {
+  :root {
+    --xl: 1200px;
+    --lg: 1024px;
+    --md: 768px;
+    --sm: 640px;
+    --body-margin-left: 16px;
+    --body-margin-right: 16px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .container {
+    padding-left: var(--body-margin-left);
+    padding-right: var(--body-margin-right);
+  }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #19181f;
+    --foreground: #ffffff;
+  }
+}
+
