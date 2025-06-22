@@ -1,24 +1,27 @@
 "use client";
-
 import { useState, ReactNode } from 'react';
 import Link from "next/link";
 import { allPosts } from "@/../.contentlayer/generated";
 import { ThemeToggle } from '@/features/ThemeToggle'
 import { DEFAULT_PATHS } from '@/shared/lib/config'
 
-export default function LayoutWrapper({ children }:{ children: ReactNode}) {
+export default function PostLayout({ children }:{ children: ReactNode}) {
   const tabs =[{type:"Article", href: DEFAULT_PATHS.HOME }];
   const [selectedTab, setSelectedTab] = useState("Article");
+
+
   
   const posts = allPosts.sort(
     (a, b) => Number(new Date(b.date)) - Number(new Date(a.date))
   );
   const uniqueTags = [...new Set(posts.map(e=>e.tags).flat())];
+  const isMainPage = typeof window !== "undefined" && window.location.pathname === "/";
 
   return (
-      <section className="w-full min-h-[60px] flex justify-evenly"> 
+      <section className="w-full min-h-[60px] flex justify-evenly border"> 
         <div className="w-full">
-          <div className="pt-12 z-10 sticky top-0 w-full flex justify-between border-b border-gray-300 bg-background  dark:bg-foreground">
+          {!isMainPage &&(
+            <div className="pt-12 z-10 sticky top-0 w-full flex justify-between border-b border-gray-300 bg-background dark:bg-foreground">
             {tabs.map(({ type, href }) => (
               <div 
                 key={`tab-${type}`} 
@@ -26,9 +29,10 @@ export default function LayoutWrapper({ children }:{ children: ReactNode}) {
               > 
                 <Link
                   href={href}
-                  className={`px-4 text-md font-medium rounded
-                    ${selectedTab === type ? "font-bold " : "text-gray-400"}  
-                  `}
+                  // className={`px-4 text-lg font-medium rounded text-[var(--c-text-1)]
+                  //   ${selectedTab === type ? "font-bold " : "text-gray-400"}  
+                  // `}
+                  className='px-4 text-lg text-[var(--c-text-1)'
                   onClick={() => setSelectedTab(type)}
                 >
                   {type}
@@ -40,6 +44,8 @@ export default function LayoutWrapper({ children }:{ children: ReactNode}) {
             ))}
             <ThemeToggle />
           </div>
+          )}
+          
           {children}
         </div> 
         {/* <div className="w-full max-w-[200px] pl-4 border-l border-[#e5e8eb] lg:hidden my-2 ">

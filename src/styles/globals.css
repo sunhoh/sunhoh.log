@@ -1,5 +1,6 @@
 @import url("https://cdn.jsdelivr.net/gh/taevel02/typeface-arita/arita.min.css");
 @import 'animation.css';
+@import 'theme.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

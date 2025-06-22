@@ -1,29 +1,18 @@
 import React from "react";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { allPosts } from '@/../.contentlayer/generated'
 import { Mdx } from '@/features/Mdx'
 import { formatDate } from '@/shared/utils/formatDate'
-// import { Metadata } from "next";
-
-// export async function generateMetadata({ params }: { params: { slug: string[] } }): Promise<Metadata> {
-//   const { slug } = await params;
-
-//   return {
-//     title: {
-//       absolute: slug?.join(" - "),
-//     },
-//   };
-// }
 
 const page = async ({ params }:any) => {
   const { slug } = await params;
   const article = allPosts.find((post) => post._raw.flattenedPath === slug)
-
+  
   if (!article) notFound();
+  console.log('article',article)
 
   return(
-      <article className="container mt-12 prose prose-blue dark:prose-invert">
+      <article className="container m-auto mt-12 prose prose-blue dark:prose-invert">
         {/* {article.thumbnail && (
           <Image
             className="w-full max-h-[400px] object-cover"

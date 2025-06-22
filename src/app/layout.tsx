@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from '@/widgets/themeProvider'
-import LayoutWrapper from '@/widgets/layout/LayoutWrapper'
+
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
@@ -24,8 +24,8 @@ export default function RootLayout({
       </head>
       <body className="bg-background dark:bg-foreground">
         <ThemeProvider>
-          <main className="max-w-3xl mx-auto my-14 px-4 font-self">
-            <LayoutWrapper>{children}</LayoutWrapper>
+          <main className="max-w-3xl mx-auto my-16 px-4 font-self">
+            {children}
           </main>
         </ThemeProvider>
       </body>

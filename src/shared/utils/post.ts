@@ -14,8 +14,6 @@ export const getAllPosts = () => {
     
     const matterResult = matter(fileContents);
 
-    
-
     return {
       postId,
       ...matterResult.data,
