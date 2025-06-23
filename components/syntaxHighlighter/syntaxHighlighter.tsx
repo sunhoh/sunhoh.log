@@ -123,6 +123,16 @@ const syntaxHighlighter = {
   hr: ({ ...props }) => (
     <hr className='my-6 border-gray-300 border-t-1' {...props} />
   ),
+  details: ({ children, ...props }: any) => (
+    <details {...props} className="p-4 my-4 border border-gray-300 rounded-md dark:border-gray-600">
+      {children}
+    </details>
+  ),
+  summary: ({ children, ...props }: any) => (
+    <summary {...props} className="font-semibold cursor-pointer">
+      {children}
+    </summary>
+  ),
 };
 
 export default syntaxHighlighter;

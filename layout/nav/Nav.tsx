@@ -12,7 +12,7 @@ const Nav = () => {
       {/* home logo hidden sm:flex */}
       <div className="">
         <Link href={DEFAULT_PATHS.HOME}>
-          <h1 className="text-3xl font-bold cursor-pointer">Blog</h1>
+          <h1 className="text-3xl font-bold cursor-pointer">Posts</h1>
         </Link>
       </div>
       {/* sm bar */}

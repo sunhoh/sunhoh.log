@@ -23,12 +23,12 @@ const PostItem = ({ data: [year, postList] }: { data: [string, Post[]] }) => {
             <div className='w-full ml-[10%]'>
               <div className='flex items-center gap-1'>
                 <span className='text-md'>{title}</span>
-                <span className="ml-1 text-xs leading-6 transition-all opacity-30 group-hover:opacity-100 dark:text-gray-400">
+                <span className="ml-1 text-xs leading-6 transition-all opacity-30 dark:text-gray-400">
                   {getEnUsShortDate(new Date(date))}
                 </span>
               </div>
               
-              <div className='text-xs transition-all opacity-30 group-hover:opacity-100 dark:text-gray-400'>{description}</div>
+              <div className='text-xs transition-all opacity-30 dark:text-gray-400'>{description}</div>
             </div>
           </div>
         <CsLineIcons

@@ -4,7 +4,7 @@ import svgs from './svgs';
 interface ICsLineIcons {
   icon: string;
   className?: string;
-  size?: number | null;
+  size?: number | any | null;
   width?: number;
   height?: number;
   fill?: string;
