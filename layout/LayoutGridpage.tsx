@@ -1,7 +1,7 @@
 import React from 'react';
-import Sidebar from 'components/sidebar/Sidebar';
-import { TableOfContents } from 'types/post'
-import { DEFAULT_PATHS } from 'lib/config';
+import Sidebar from '../components/sidebar/Sidebar';
+import { TableOfContents } from '../types/post'
+import { DEFAULT_PATHS } from '../lib/config';
 import { useRouter } from 'next/router';
 
 

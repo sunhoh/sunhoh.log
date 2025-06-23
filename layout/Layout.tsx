@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from './footer/Footer';
 import { useRouter } from 'next/router';
-import { DEFAULT_PATHS } from 'lib/config';
+import { DEFAULT_PATHS } from '../lib/config';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter()

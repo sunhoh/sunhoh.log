@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
+import CsLineIcons from '../../lib/cs-line-icons/CsLineIcons';
 
 const Footer = () => {
   return (

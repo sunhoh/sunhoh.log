@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { PostNavigationProps } from 'types/post'
+import { PostNavigationProps } from '../../types/post'
 
 const PostNavigation = ({ prevPost, nextPost }:PostNavigationProps) => {
 

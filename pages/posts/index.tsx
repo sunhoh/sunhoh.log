@@ -1,11 +1,11 @@
 import React from 'react';
-import { Post } from 'types/post';
-import { getAllPosts } from 'utils/post';
-import PostItem from 'container/post/PostItem';
-import LayoutGridpage from 'layout/LayoutGridpage'
-import Helmet from 'components/html-head/Helmet';
-import { yearEntriesCb } from 'utils/post'
-import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
+import { Post } from '../../types/post';
+import { getAllPosts } from '../../utils/post';
+import PostItem from '../../container/post/PostItem';
+import LayoutGridpage from '../../layout/LayoutGridpage'
+import Helmet from '../../components/html-head/Helmet';
+import { yearEntriesCb } from '../../utils/post'
+import CsLineIcons from '../../lib/cs-line-icons/CsLineIcons';
 import { useTheme } from 'next-themes';
 
 const Posts = ({ posts }: { posts: Post[] }) => {

@@ -1,9 +1,9 @@
 import React, { MouseEventHandler, Fragment } from 'react';
-import { TableOfContents } from 'types/post'
-import { DEFAULT_PATHS } from 'lib/config';
+import { TableOfContents } from '../../types/post'
+import { DEFAULT_PATHS } from '../../lib/config';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
-import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
+import CsLineIcons from '../../lib/cs-line-icons/CsLineIcons';
 
 const Sidebar = ({ toc}: { toc?:TableOfContents}) => {
   const router = useRouter()

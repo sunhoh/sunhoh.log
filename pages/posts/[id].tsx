@@ -1,14 +1,14 @@
-import Helmet from 'components/html-head/Helmet';
+import Helmet from '../../components/html-head/Helmet';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import ReactMarkdown from 'react-markdown';
-import syntaxHighlighter from 'components/syntaxHighlighter/syntaxHighlighter';
-import { getAllPostPaths, getPostData, getEnUsDate } from 'utils/post';
-import { PostMeta } from 'types/post';
-import PostNavigation from 'components/post-navigation/PostNavigation'
-import LayoutGridpage from 'layout/LayoutGridpage'
+import syntaxHighlighter from '../../components/syntaxHighlighter/syntaxHighlighter';
+import { getAllPostPaths, getPostData, getEnUsDate } from '../../utils/post';
+import { PostMeta } from '../../types/post';
+import PostNavigation from '../../components/post-navigation/PostNavigation'
+import LayoutGridpage from '../../layout/LayoutGridpage'
 import { useRouter } from 'next/router';
-import CsLineIcons from 'lib/cs-line-icons/CsLineIcons';
+import CsLineIcons from '../../lib/cs-line-icons/CsLineIcons';
 
 export default function Post({ data }: { data: PostMeta }) {
   const { contentHtml, date, title, description, thumbnail, tableOfContents, postNavigationProps } = data;
@@ -39,7 +39,7 @@ export default function Post({ data }: { data: PostMeta }) {
           <div className='pt-8'>
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeRaw]}
+              rehypePlugins={[rehypeRaw as any]}
               children={contentHtml}
               components={syntaxHighlighter as any}
             />

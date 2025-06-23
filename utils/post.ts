@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { remark } from 'remark';
 import * as remarkHtml from 'remark-html';
 import { differenceInDays } from 'date-fns';
-import { Post, TableOfContents } from 'types/post';
+import { Post, TableOfContents } from '../types/post';
 
 const postRoute = path.join(process.cwd(), 'posts');
 
